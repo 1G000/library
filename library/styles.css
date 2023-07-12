@@ -32,30 +32,33 @@
   width: 100%;
   height: 90px;
   background-color: #0c0c0e;
+  padding: 0px 20px 0px 20px;
 }
 
 .main-title {
   color: #ffffff;
-  font-family: Forum;
+  font-family: Forum, serif;
   font-size: 30px;
-  margin: 20px 454px 20px 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 50px;
   letter-spacing: 0.6px;
+  margin-right: auto;
 }
 
 .nav-list {
   display: flex;
+  align-self: center;
   list-style: none;
+  padding-right: 25px;
 }
 
-.nav-item {
-  padding: 20px 30px 20px 0px;
-}
+/* .nav-item {
+} */
 
 .nav-link {
-  font-family: Inter;
+  display: block;
+  font-family: Inter, serif;
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
@@ -63,18 +66,27 @@
   font-style: normal;
   font-weight: 400;
   line-height: 50px;
+  padding: 10px 15px 10px 15px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 .profile-icon {
   width: 28px;
   height: 28px;
-  margin-right: 20px;
-  margin-left: 10px;
 }
 
 .welcome {
   height: 600px;
-  background-image: url(./img/util/85c1859f825ed82614b2036bc8be037f.jpg);
+  background: linear-gradient(
+      180deg,
+      #0c0c0e 0%,
+      #0c0c0e 0.01%,
+      rgba(18, 18, 21, 0.1) 100%
+    ),
+    url(./img/util/85c1859f825ed82614b2036bc8be037f.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
