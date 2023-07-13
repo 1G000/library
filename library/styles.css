@@ -130,6 +130,11 @@ html {
   background-color: #ffffff;
 }
 
+.section-favorites {
+  text-align: center;
+  background-color: #ffffff;
+}
+
 .section-title {
   display: inline-block;
   position: relative;
@@ -170,7 +175,7 @@ html {
 }
 
 .gallery-info {
-  color: #000;
+  color: #0c0c0e;
   text-align: center;
   font-family: Inter, serif;
   font-size: 20px;
@@ -193,7 +198,7 @@ html {
   width: 16px;
   border-radius: 50%;
   border: 0px;
-  background-color: #000;
+  background-color: #0c0c0e;
 }
 
 .btn-active {
@@ -207,4 +212,75 @@ html {
   top: -5px;
   left: -5px;
   content: "";
+}
+
+.favorites-text {
+  color: #0c0c0e;
+  font-family: Inter, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.seasons-input-area {
+  display: flex;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.radio-btn {
+  display: none;
+}
+
+.radio-label {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 37px;
+  margin-right: 90px;
+}
+
+.radio-label:before {
+  content: "";
+  background-image: url(./img/util/radio.svg);
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  left: 0px;
+  top: 4px;
+}
+
+.radio-label:after {
+  content: "";
+  opacity: 20%;
+  background-color: yellow;
+  width: 114px;
+  height: 34px;
+  position: absolute;
+  left: 0px;
+  top: -4px;
+}
+
+.radio-label-cheked {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 37px;
+}
+
+.radio-label-checked:before {
+  content: "";
+  background-image: url(./img/util/radio-checked.svg);
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  left: 0;
+  top: 4px;
 }
