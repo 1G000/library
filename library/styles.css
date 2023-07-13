@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
   width: 1440px;
   margin: 0 auto;
@@ -27,7 +31,6 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 90px;
@@ -48,13 +51,9 @@
 
 .nav-list {
   display: flex;
-  align-self: center;
   list-style: none;
   padding-right: 25px;
 }
-
-/* .nav-item {
-} */
 
 .nav-link {
   display: block;
@@ -80,35 +79,40 @@
 
 .welcome {
   height: 600px;
-  background: linear-gradient(
-      180deg,
-      #0c0c0e 0%,
-      #0c0c0e 0.01%,
-      rgba(18, 18, 21, 0.1) 100%
-    ),
-    url(./img/util/85c1859f825ed82614b2036bc8be037f.jpg);
+  background: url(./img/util/85c1859f825ed82614b2036bc8be037f.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+.welcome:before {
+  position: absolute;
+  content: "";
+  height: 300px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    #0c0c0e 0%,
+    #0c0c0e 0.01%,
+    rgba(18, 18, 21, 0.1) 100%
+  );
 }
 
 .welcome-block {
   background-color: #0c0c0e;
-  display: flex;
   width: 600px;
   height: 220px;
   padding: 35px 40px;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   flex-shrink: 0;
   position: absolute;
-  top: 310px;
-}
-
-.welcome-title {
+  top: 220px;
   color: #fff;
   text-align: center;
-  font-family: Forum;
+  font-family: Forum, serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -117,14 +121,13 @@
   text-transform: uppercase;
 }
 
-.about {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  height: 837px;
-  background-color: bisque;
-  padding: 20px 20px 40px 20px;
+.section {
+  padding: 20px 20px 40px;
+}
+
+.section-about {
+  text-align: center;
+  background-color: #ffffff;
 }
 
 .section-title {
@@ -138,6 +141,8 @@
   line-height: 40px;
   letter-spacing: 2px;
   text-transform: capitalize;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .section-title:after {
@@ -149,15 +154,14 @@
   left: 0;
   right: 0;
   margin: auto;
-  bottom: -20px;
+  bottom: 0px;
 }
 
 .gallery {
   display: flex;
   width: 100%;
-  height: 560px;
   justify-content: space-between;
-  padding: 20px 0 0 0;
+  margin: 20px 0px 40px 0px;
 }
 
 .gallery-item {
@@ -175,6 +179,32 @@
   line-height: 40px;
 }
 
-.svg-area {
-  margin-top: 40px;
+.btn-area {
+  width: 68px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 0px;
+  background-color: #000;
+}
+
+.btn-active {
+  background-color: #bb945f;
+}
+
+.btn:before {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: -5px;
+  left: -5px;
+  content: "";
 }
