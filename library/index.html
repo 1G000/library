@@ -14,7 +14,7 @@
                 <ul class="nav-list">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#favorites">Favorites</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Coffee shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#coffee-shop">Coffee shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Library Card</a></li>
                 </ul>
@@ -24,7 +24,7 @@
         <main class="main">
 <section class="welcome">
     <div class="welcome-block">
-        <p class="welcome-title">welcome<br> to the brooklyn<br> library</p>
+        <p class="welcome-title">welcome&nbsp;<br>to the brooklyn<br>library</p>
     </div>
 </section>
 <section class="section section-about">
@@ -44,23 +44,62 @@
 <section class="section section-favorites">
     <h2 class="section-title" id="favorites">Favorites</h2>
     <p class="favorites-text">Pick favorites of season</p>
-    <div class="seasons-input-area">
-        <form>
-            <input type="radio" class="radio-btn" id="winter"><label class="radio-label radio-label-checked" for="winter">Winter</label>
-            <input type="radio" class="radio-btn" id="spring"><label class="radio-label" for="winter">Spring</label>
-            <input type="radio" class="radio-btn" id="summer"><label class="radio-label" for="summer">Summer</label>
-            <input type="radio" class="radio-btn" id="autumn"><label class="radio-label" for="autumn">Autumn</label>
-        </form>
-    </div>
+    <ul class="seasons-list">
+        <li class="season">
+            <input type="radio" name='a' class="radio-btn" id="winter" checked="checked">
+                <label class="radio-label" for="winter">Winter</label>
+        </li>
+        <li class="season">
+            <input type="radio" name='a' class="radio-btn" id="spring">
+                <label class="radio-label" for="spring">Spring</label>
+        <li class="season">
+            <input type="radio" name='a' class="radio-btn" id="summer">
+                <label class="radio-label" for="summer">Summer</label>
+        </li>
+        <li class="season">
+            <input type="radio" name='a' class="radio-btn" id="autumn">
+                <label class="radio-label" for="autumn">Autumn</label>
+        </li>
+    </ul>
     <div class="books-section">
-        <article></article>
-        <article></article>
-        <article></article>
-        <article></article>
-
+        <article class="book-article">
+            <h4 class="article-title">Staff Picks</h4>
+            <h5 class="book-title">The Book Eaters</h5>
+            <p class="book-author">By Sunyi Dean</p>
+            <p class="book-description">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
+            <button type="button" class="buy-btn">Buy</button>
+            <img src="./img/books-covers/the-book-eaters.jpg" class="book" alt="The book eaters">
+        </article>
+        <article class="book-article">
+            <h4 class="article-title">Staff Picks</h4>
+            <h5 class="book-title">Cackle</h5>
+            <p class="book-author">By Rachel Harrison</p>
+            <p class="book-description">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
+            <button type="button" class="buy-btn">Buy</button>
+            <img src="./img/books-covers/cackle.jpg" class="book" alt="Cackle">
+        </article>
+        <article class="book-article">
+            <h4 class="article-title">Staff Picks</h4>
+            <h5 class="book-title">Dante: Poet of the Secular World</h5>
+            <p class="book-author">By Erich Auerbach</p>
+            <p class="book-description">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
+            <button type="button" class="buy-btn">Buy</button>
+            <img src="./img/books-covers/dante-poet-of-the-secular-world.jpg" class="book" alt="Dante: Poet of the Secular World">
+        </article>
+        <article class="book-article">
+            <h4 class="article-title">Staff Picks</h4>
+            <h5 class="book-title">The Last Queen</h5>
+            <p class="book-author">By Clive Irving</p>
+            <p class="book-description">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
+            <button type="button" class="buy-btn buy-btn-active">Own</button>
+            <img src='./img/books-covers/the-last-queen.jpg' class="book" alt="The Last Queen">
+        </article>
     </div>
 </section>
-<section></section>
+<section class="section">
+<h2 class="section-title" id="coffee-shop">Coffee Shop</h2>
+<p class="coffee-shop-info">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
+</section>
 <section></section>
 <section></section>
         </main>
