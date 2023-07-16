@@ -221,6 +221,10 @@ html {
   content: "";
 }
 
+.section-favorites {
+  padding-bottom: 0px;
+}
+
 .favorites-text {
   color: #0c0c0e;
   font-family: Inter-Bold, serif;
@@ -367,7 +371,7 @@ html {
   border: 1px solid #0c0c0e;
   color: #0c0c0e;
   text-align: center;
-  font-family: Inter, serif;
+  font-family: Inter-Bold, serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 700;
@@ -377,11 +381,30 @@ html {
   left: 20px;
   bottom: 15px;
   cursor: pointer;
+  transition: background-color 0.6s ease;
 }
 
 .buy-btn-active {
+  width: 75px;
+  height: 30px;
+  background: #fff;
+  border-radius: 2px;
   color: #bb945f;
   border: 1px solid #bb945f;
+  text-align: center;
+  font-family: Inter-Bold, serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+}
+
+.buy-btn:hover {
+  background-color: #bb945f;
 }
 
 .book {
@@ -393,6 +416,12 @@ html {
   left: 390px;
 }
 
+.section-coffee-shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .coffee-shop-info {
   color: #000;
   text-align: center;
@@ -402,5 +431,74 @@ html {
   font-weight: 400;
   line-height: 40px; /* 200% */
   letter-spacing: 2px;
+  margin: 0px 0px 40px 0px;
+}
+
+.menu-field {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu-title-right {
+  text-align: right;
+}
+
+.menu-right {
+  width: 482px;
+  margin-left: 477px;
+}
+
+.menu-title {
+  color: #bb945f;
+  font-family: Forum, serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 100% */
+  letter-spacing: 2px;
   text-transform: capitalize;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.item-name {
+  color: #000;
+  font-family: Inter, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 200% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.item-name-right {
+  margin-left: auto;
+}
+.item-price {
+  position: relative;
+  color: #000;
+  font-family: Forum;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 200% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-left: 220px;
+}
+
+.item-price:before {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: #bb945f;
+  top: 20px;
+  right: 82px;
+  content: "";
 }
