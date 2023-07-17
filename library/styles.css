@@ -29,6 +29,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: grey;
+}
+
 .wrapper {
   width: 1440px;
   margin: 0 auto;
@@ -113,7 +117,6 @@ html {
   width: 600px;
   height: 220px;
   padding: 35px 40px;
-  text-align: center;
   flex-shrink: 0;
   position: absolute;
   top: 220px;
@@ -130,11 +133,11 @@ html {
 
 .section {
   padding: 20px 20px 40px;
+  background-color: #ffffff;
 }
 
 .section-about {
   text-align: center;
-  background-color: #ffffff;
 }
 
 .section-favorites {
@@ -233,38 +236,34 @@ html {
   font-weight: 700;
   line-height: 24.2px;
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 .seasons-list {
-  list-style: none;
   display: flex;
-}
-
-.season:first-child {
-  padding: 5px 5px 5px 0px;
-}
-
-.season {
-  padding: 5px;
-  margin-right: 80px;
-  color: #0c0c0e;
-  font-family: Inter, serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  gap: 80px;
 }
 
 .radio-btn {
   display: none;
 }
 
+.seasons-list :nth-child(2) {
+  padding: 5px 5px 5px 0px;
+}
+
 .radio-label {
   cursor: pointer;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: end;
+  line-height: 24px;
+  padding: 5px;
+  color: #0c0c0e;
+  font-family: Inter, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .radio-label:before {
@@ -273,6 +272,7 @@ html {
   width: 17px;
   height: 17px;
   margin-right: 20px;
+  margin-bottom: 2px;
 }
 
 .radio-btn:checked + .radio-label:before {
@@ -348,6 +348,7 @@ html {
   line-height: 40px;
   letter-spacing: 2px;
   text-transform: capitalize;
+  text-align: left;
 }
 
 .book-description {
@@ -385,26 +386,15 @@ html {
 }
 
 .buy-btn-active {
-  width: 75px;
-  height: 30px;
-  background: #fff;
-  border-radius: 2px;
   color: #bb945f;
   border: 1px solid #bb945f;
-  text-align: center;
-  font-family: Inter-Bold, serif;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 1px;
-  position: absolute;
-  left: 20px;
-  bottom: 15px;
+  transition: none;
+  cursor: inherit;
 }
 
-.buy-btn:hover {
+.buy-btn:hover:not(:disabled) {
   background-color: #bb945f;
+  border: 0px;
 }
 
 .book {

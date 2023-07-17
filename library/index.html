@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css"
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class="wrapper">
@@ -44,123 +44,126 @@
 <section class="section section-favorites">
     <h2 class="section-title" id="favorites">Favorites</h2>
     <p class="favorites-text">Pick favorites of season</p>
-    <ul class="seasons-list">
-        <li class="season">
-            <input type="radio" name='a' class="radio-btn" id="winter" checked="checked">
-                <label class="radio-label" for="winter">Winter</label>
-        </li>
-        <li class="season">
-            <input type="radio" name='a' class="radio-btn" id="spring">
-                <label class="radio-label" for="spring">Spring</label>
-        <li class="season">
-            <input type="radio" name='a' class="radio-btn" id="summer">
-                <label class="radio-label" for="summer">Summer</label>
-        </li>
-        <li class="season">
-            <input type="radio" name='a' class="radio-btn" id="autumn">
-                <label class="radio-label" for="autumn">Autumn</label>
-        </li>
-    </ul>
+    <div class="seasons-list">
+        <input type="radio" name='season' class="radio-btn" id="winter" checked="checked">
+            <label class="radio-label" for="winter">Winter</label>
+        <input type="radio" name='season' class="radio-btn" id="spring">
+            <label class="radio-label" for="spring">Spring</label>
+        <input type="radio" name='season' class="radio-btn" id="summer">
+            <label class="radio-label" for="summer">Summer</label>
+        <input type="radio" name='season' class="radio-btn" id="autumn">
+            <label class="radio-label" for="autumn">Autumn</label>
+    </div>
     <div class="books-section">
         <article class="book-article">
-            <h4 class="article-title">Staff Picks</h4>
-            <h5 class="book-title">The Book Eaters</h5>
-            <p class="book-author">By Sunyi Dean</p>
+            <p class="article-title">Staff Picks</p>
+            <header>
+                <h3 class="book-title">The Book Eaters</h3>
+                <p class="book-author">By Sunyi Dean</p>
+            </header>
             <p class="book-description">An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional family values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
             <button type="button" class="buy-btn">Buy</button>
             <img src="./img/books-covers/the-book-eaters.jpg" class="book" alt="The book eaters">
         </article>
         <article class="book-article">
-            <h4 class="article-title">Staff Picks</h4>
-            <h5 class="book-title">Cackle</h5>
-            <p class="book-author">By Rachel Harrison</p>
+            <p class="article-title">Staff Picks</з>
+            <header>
+                <h3 class="book-title">Cackle</h3>
+                <p class="book-author">By Rachel Harrison</p>
+            </header>
             <p class="book-description">Are your Halloween movies of choice The Witches of Eastwick and Practical Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
             <button type="button" class="buy-btn">Buy</button>
             <img src="./img/books-covers/cackle.jpg" class="book" alt="Cackle">
         </article>
         <article class="book-article">
-            <h4 class="article-title">Staff Picks</h4>
-            <h5 class="book-title">Dante: Poet of the Secular World</h5>
-            <p class="book-author">By Erich Auerbach</p>
+            <p class="article-title">Staff Picks</p>
+            <header>
+                <h5 class="book-title">Dante: Poet of the Secular World</h5>
+                <p class="book-author">By Erich Auerbach</p>
+            </header>
             <p class="book-description">Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
             <button type="button" class="buy-btn">Buy</button>
             <img src="./img/books-covers/dante-poet-of-the-secular-world.jpg" class="book" alt="Dante: Poet of the Secular World">
         </article>
         <article class="book-article">
-            <h4 class="article-title">Staff Picks</h4>
-            <h5 class="book-title">The Last Queen</h5>
-            <p class="book-author">By Clive Irving</p>
+            <p class="article-title">Staff Picks</p>
+            <header>
+                <h3 class="book-title">The Last Queen</h3>
+                <p class="book-author">By Clive Irving</p>
+            </header>
             <p class="book-description">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
-            <button disabled type="button" class="buy-btn-active">Own</button>
+            <button disabled type="button" class="buy-btn buy-btn-active">Own</button>
             <img src='./img/books-covers/the-last-queen.jpg' class="book" alt="The Last Queen">
         </article>
     </div>
 </section>
 <section class="section section-coffee-shop">
-<h2 class="section-title" id="coffee-shop">Coffee Shop</h2>
-<p class="coffee-shop-info">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
-<div class="menu-field">
-<article class="menu menu-left">
-    <h2 class="menu-title">Coffee & Tea</h2>
-    <ul class="menu-items">
-        <li class="menu-item">
-                <span class="item-name">Cold Brew Coffee</span>
-                <span class="item-price">$3</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name">French Press Pot</span>
-            <span class="item-price">$5</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name">Espresso</span>
-            <span class="item-price">$2</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name">Cappuccino</span>
-            <span class="item-price">$4</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name">Hot tea</span>
-            <span class="item-price">$2</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name">Cold tea</span>
-            <span class="item-price">$2</span>
-        </li>
-    </ul>
-</article>
-<article class="menu menu-right">
-    <h2 class="menu-title menu-title-right">Desserts & Cakes</h2>
-    <ul class="menu-items">
-        <li class="menu-item">
-            <span class="item-name item-name-right">Forest Gateau</span>
-            <span class="item-price">$2</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name item-name-right">Blue Moon</span>
-            <span class="item-price">$2</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name item-name-right">Truffle Cake</span>
-            <span class="item-price">$2</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name item-name-right">Chocolate Cake</span>
-            <span class="item-price">$2</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name item-name-right">Poet’s Dream Cake</span>
-            <span class="item-price">$2</span>
-        </li>
-        <li class="menu-item">
-            <span class="item-name item-name-right">Pineapple Cake</span>
-            <span class="item-price">$2</span>
-        </li>
-    </ul>
-</article>
-</div>
+    <h2 class="section-title" id="coffee-shop">Coffee Shop</h2>
+    <p class="coffee-shop-info">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. you can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
+    <div class="menu-field">
+        <article class="menu menu-left">
+            <h2 class="menu-title">Coffee & Tea</h2>
+            <ul class="menu-items">
+                <li class="menu-item">
+                    <span class="item-name">Cold Brew Coffee</span>
+                    <span class="item-price">$3</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">French Press Pot</span>
+                    <span class="item-price">$5</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Espresso</span>
+                    <span class="item-price">$2</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Cappuccino</span>
+                    <span class="item-price">$4</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Hot tea</span>
+                    <span class="item-price">$2</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name">Cold tea</span>
+                    <span class="item-price">$2</span>
+                </li>
+            </ul>
+        </article>
+        <article class="menu menu-right">
+            <h2 class="menu-title menu-title-right">Desserts & Cakes</h2>
+            <ul class="menu-items">
+                <li class="menu-item">
+                    <span class="item-name item-name-right">Forest Gateau</span>
+                    <span class="item-price">$2</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name item-name-right">Blue Moon</span>
+                    <span class="item-price">$2</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name item-name-right">Truffle Cake</span>
+                    <span class="item-price">$2</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name item-name-right">Chocolate Cake</span>
+                    <span class="item-price">$2</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name item-name-right">Poet’s Dream Cake</span>
+                    <span class="item-price">$2</span>
+                </li>
+                <li class="menu-item">
+                    <span class="item-name item-name-right">Pineapple Cake</span>
+                    <span class="item-price">$2</span>
+                </li>
+            </ul>
+        </article>
+    </div>
 </section>
-<section></section>
+<section class="section section-our-contacts">
+
+</section>
 <section></section>
         </main>
         <footer class="footer"></footer>
