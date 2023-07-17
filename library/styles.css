@@ -473,7 +473,7 @@ body {
 .item-price {
   position: relative;
   color: #000;
-  font-family: Forum;
+  font-family: Forum, serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -491,4 +491,87 @@ body {
   top: 20px;
   right: 82px;
   content: "";
+}
+
+.contacts-columns {
+  display: flex;
+  gap: 199px; /** !!!!!!!!!НЕ ПО МАКЕТУ!!!!!!!!!!!**/
+}
+
+.contacts-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-capture {
+  background-image: url(./img/util/map.png);
+  width: 696px;
+  height: 414px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.section-contacts-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts-title {
+  color: #000;
+  text-align: center;
+  font-family: Inter-Bold, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 200% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.contacts-text-content {
+  color: #000;
+  text-align: center;
+  font-family: Inter, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 200% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: left;
+  margin: 10px 0px;
+}
+
+.contacts-column :first-child {
+  margin-bottom: 30px;
+}
+
+.contacts-column :nth-child(5) {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.phone-number,
+.mail-adress {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mail-adress {
+  font-family: Inter-Bold, serif;
+}
+
+.phone-number:hover,
+.mail-adress:hover {
+  cursor: pointer;
+  color: #bb945f;
+}
+
+.phone-number:visited,
+.mail-adress:visited {
+  color: inherit;
 }
