@@ -660,6 +660,7 @@ form :first-child {
 
 .check-card-btn {
   display: inline-flex;
+  background: #fff;
   border-radius: 2px;
   border: 1px solid #0c0c0e;
   padding: 10px 40px;
@@ -704,7 +705,7 @@ form :first-child {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 40px; /* 200% */
+  line-height: 40px; /*200% */
   letter-spacing: 0.4px;
   margin: 35px 0 35px 0;
   text-align: right;
@@ -715,17 +716,39 @@ form :first-child {
 }
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 250px;
   background: #0c0c0e;
+  padding: 20px 20px 44px 20px;
 }
 .contacts {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .contacts-left-side {
   display: flex;
   flex-direction: column;
+}
+
+.contacts-right-side :first-child {
+  margin-bottom: 10px;
+}
+
+.social-media-icons {
+  display: flex;
+  list-style: none;
+  padding: 8px 0px 8px 0px;
+  gap: 15px;
+}
+
+.social-media-icon {
+  width: 24px;
+  height: 24px;
+  margin: auto 0;
 }
 
 .footer-links {
@@ -742,15 +765,52 @@ form :first-child {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 40px; /* 200% */
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+.year-numbers {
+  color: #fff;
+  text-align: center;
+  font-family: Inter, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
   letter-spacing: 2px;
 }
-
 .adress-link {
   color: #fff;
   font-family: Inter, serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
+  line-height: 20px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.footer-link:hover,
+.adress-link:hover {
+  color: #bb945f;
+}
+
+.opening-hours-text {
+  color: #fff;
+  text-align: right;
+  font-family: Inter, serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 20px; /* 133.333% */
+}
+
+.contacts:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  top: 118px;
+  left: 0;
+  right: 0;
+  bottom: 0px;
 }
