@@ -575,3 +575,97 @@ body {
 .mail-adress:visited {
   color: inherit;
 }
+
+.section-library-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards-columns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #bb945f;
+  background: #fff;
+  padding: 20px 20px 30px 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 560px;
+  height: 272px;
+  background: #bb945f;
+  padding: 20px 20px 25px 20px;
+}
+
+.card-btn {
+  position: inherit;
+}
+
+.card-title {
+  color: #000;
+  font-family: Forum, serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 166.667% */
+  letter-spacing: 0.6px;
+}
+
+.holder-info {
+  width: 520px;
+  height: 66px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #fff;
+  color: #8e8e8e;
+  font-family: Forum, serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 166.667% */
+  letter-spacing: 0.6px;
+  padding-left: 20px;
+}
+
+form :first-child {
+  margin-bottom: 25px;
+}
+
+.find-card-title {
+  color: #000;
+  font-family: Inter, serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.check-card-btn {
+  display: inline-flex;
+  border-radius: 2px;
+  border: 1px solid #0c0c0e;
+  padding: 10px 40px;
+  color: #0c0c0e;
+  text-align: center;
+  font-family: Inter-Bold, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
