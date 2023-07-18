@@ -638,6 +638,10 @@ body {
   padding-left: 20px;
 }
 
+/* Желательно сделать ограничения в полях input на
+использование только букв и цифр, а также дефиса.
+ Но это правило проверять не нужно. */
+
 form :first-child {
   margin-bottom: 25px;
 }
@@ -668,4 +672,44 @@ form :first-child {
   line-height: normal;
   letter-spacing: 1px;
   margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+
+.check-card-btn:hover {
+  background-color: #bb945f;
+  border: 1px solid #bb945f;
+}
+
+.get-card-column {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.get-card-title {
+  color: #000;
+  text-align: center;
+  font-family: Forum, serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+}
+
+.get-card-text {
+  color: #000;
+  font-family: Inter, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 200% */
+  letter-spacing: 0.4px;
+  margin: 35px 0 35px 0;
+  text-align: right;
+}
+
+.card-btn-area :first-child {
+  margin-right: 20px;
 }

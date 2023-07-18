@@ -17,7 +17,7 @@
                     <li class="nav-item"><a class="nav-link" href="#favorites">Favorites</a></li>
                     <li class="nav-item"><a class="nav-link" href="#coffee-shop">Coffee shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section-info">Contacts</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Library Card</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#library-card">Library Card</a></li>
                 </ul>
             </nav>
             <img src="./img/util/icon_profile.svg" class="profile-icon" alt="profile icon">
@@ -96,6 +96,7 @@
             <button disabled type="button" class="buy-btn buy-btn-active">Own</button>
             <img src='./img/books-covers/the-last-queen.jpg' class="book" alt="The Last Queen">
         </article>
+        <!-- !!!!!!!!!!ПОФИКСИТЬ КАРТИНКИ!!!!!!!!!!!!!! -->
     </div>
 </section>
 <section class="section section-coffee-shop">
@@ -178,7 +179,7 @@
     </div>
 </section>
 <section class="section section-library-card">
-    <h2 class="section-title">Digital Library Cards</h2>
+    <h2 class="section-title" id="library-card">Digital Library Cards</h2>
     <div class="cards-columns">
         <div class="find-card-column">
             <p class="find-card-title">Find your Library card</p>
@@ -187,16 +188,18 @@
                     <h5 class="card-title">Brooklyn Public Library</h5>
                     <form>
                         <input class="holder-info" type="text" placeholder="Reader's name ">
-                        <input class="holder-info" type="text" placeholder="Card number">
+                        <input class="holder-info" type="number" placeholder="Card number">
                 </div>
                 <button class="check-card-btn">Check the card</button>
             </div>
         </div>
         <div class="get-card-column">
-            <p>Get a reader card</p>
-            <p>You will be able to see a reader card after<br> logging into account or you can register a new<br> account</p>
-            <button class="buy-btn card-btn">Sign Up</button>
-            <button class="buy-btn card-btn">Log in</button>
+            <p class="get-card-title">Get a reader card</p>
+            <p class="get-card-text">You will be able to see a reader card after<br> logging into account or you can register a new<br> account</p>
+            <div class="card-btn-area">
+                <button class="buy-btn card-btn">Sign Up</button>
+                <button class="buy-btn card-btn">Log in</button>
+            </div>
         </div>
     </div>
 </section>
