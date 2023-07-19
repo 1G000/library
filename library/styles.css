@@ -88,6 +88,10 @@ body {
   height: 28px;
 }
 
+.profile-icon:hover {
+  cursor: pointer;
+}
+
 .welcome {
   height: 600px;
   background: url(./img/util/85c1859f825ed82614b2036bc8be037f.jpg);
@@ -400,7 +404,7 @@ body {
 .book {
   width: 200px;
   height: 300px;
-  background-color: #bb945f;
+  object-fit: cover;
   position: absolute;
   bottom: -1px;
   left: 390px;
@@ -489,7 +493,7 @@ body {
   height: 1px;
   background: #bb945f;
   top: 20px;
-  right: 82px;
+  right: 85px;
   content: "";
 }
 
@@ -755,7 +759,6 @@ form :first-child {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 
 .footer-link {
