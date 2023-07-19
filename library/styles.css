@@ -33,6 +33,10 @@ body {
   background-color: grey;
 }
 
+.hidden {
+  display: none;
+}
+
 .wrapper {
   width: 1440px;
   margin: 0 auto;
