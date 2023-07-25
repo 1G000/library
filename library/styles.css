@@ -38,18 +38,20 @@ body {
 }
 
 .wrapper {
-  width: 1440px;
+  /* width: 1440px; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .header {
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 1440px;
   height: 90px;
   background-color: #0c0c0e;
+  background-size: 100% 100%;
   padding: 0px 20px 0px 20px;
 }
 
@@ -97,6 +99,7 @@ body {
 }
 
 .welcome {
+  min-width: 1440px;
   height: 600px;
   background: url(./img/util/85c1859f825ed82614b2036bc8be037f.jpg);
   background-position: center center;
@@ -120,6 +123,11 @@ body {
   );
 }
 
+.welcome-block-wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+
 .welcome-block {
   background-color: #0c0c0e;
   width: 600px;
@@ -140,6 +148,8 @@ body {
 }
 
 .section {
+  width: 1440px;
+  margin: 0 auto;
   padding: 20px 20px 40px;
   background-color: #ffffff;
 }
@@ -336,6 +346,7 @@ body {
 }
 
 .book-title {
+  min-width: 460px;
   color: #000;
   font-family: Inter-Bold, serif;
   text-align: left;
@@ -529,7 +540,6 @@ body {
 
 .contacts-title {
   color: #000;
-  text-align: center;
   font-family: Inter-Bold, serif;
   font-size: 20px;
   font-style: normal;
@@ -542,7 +552,6 @@ body {
 
 .contacts-text-content {
   color: #000;
-  text-align: center;
   font-family: Inter, serif;
   font-size: 20px;
   font-style: normal;
@@ -564,23 +573,23 @@ body {
 }
 
 .phone-number,
-.mail-adress {
+.mail-address {
   text-decoration: none;
   color: inherit;
 }
 
-.mail-adress {
+.mail-address {
   font-family: Inter-Bold, serif;
 }
 
 .phone-number:hover,
-.mail-adress:hover {
+.mail-address:hover {
   cursor: pointer;
   color: #bb945f;
 }
 
 .phone-number:visited,
-.mail-adress:visited {
+.mail-address:visited {
   color: inherit;
 }
 
@@ -602,6 +611,7 @@ body {
   flex-direction: column;
   align-items: center;
   border: 3px solid #bb945f;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: #fff;
   padding: 20px 20px 30px 20px;
 }
@@ -727,6 +737,8 @@ form :first-child {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 1440px;
+  margin: 0 auto;
   height: 250px;
   background: #0c0c0e;
   padding: 20px 20px 44px 20px;
