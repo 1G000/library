@@ -25,10 +25,8 @@
         <main class="main">
 <section class="welcome">
     <h2 class="hidden">welcome</h2>
-    <div class="welcome-block-wrapper">
         <div class="welcome-block">
         <p class="welcome-title">welcome&nbsp;<br>to the brooklyn<br>library</p>
-    </div>
     </div>
 </section>
 
@@ -51,13 +49,13 @@
     <p class="favorites-text">Pick favorites of season</p>
     <div class="seasons-list">
         <input type="radio" name='season' class="radio-btn" id="winter" checked="checked">
-            <label class="radio-label" for="winter">Winter</label>
+            <label class="radio-label" for="winter"><span class="season-name">Winter</span></label>
         <input type="radio" name='season' class="radio-btn" id="spring">
-            <label class="radio-label" for="spring">Spring</label>
+            <label class="radio-label" for="spring"><span class="season-name">Spring</span></label>
         <input type="radio" name='season' class="radio-btn" id="summer">
-            <label class="radio-label" for="summer">Summer</label>
+            <label class="radio-label" for="summer"><span class="season-name">Summer</span></label>
         <input type="radio" name='season' class="radio-btn" id="autumn">
-            <label class="radio-label" for="autumn">Autumn</label>
+            <label class="radio-label" for="autumn"><span class="season-name">Autumn</span></label>
     </div>
     <div class="books-section winter">
         <article class="book-article">
@@ -317,7 +315,7 @@
                     <h5 class="card-title">Brooklyn Public Library</h5>
                     <form>
                         <input class="holder-info" type="text" placeholder="Reader's name ">
-                        <input class="holder-info" type="number" placeholder="Card number">
+                        <input class="holder-info" type="text" placeholder="Card number">
                     </form>
                 </div>
                 <button type="submit" class="check-card-btn">Check the card</button>
@@ -357,13 +355,11 @@
             </div>
         <div class="footer-links">
             <p class="year-numbers">2023</p>
-            <a class="footer-link" href="https://rs.school/js-stage0/">The Rolling Scopes School</a>
+            <a class="footer-link school-link" href="https://rs.school/js-stage0/">The Rolling Scopes School</a>
             <a class="footer-link" href="https://github.com/1G000/">Gorbatovskiy Igor</a>
         </div>
         </footer>
-
-
     </div>
-
+<script src="./js/index.js"></script>
 </body>
 </html>

@@ -38,17 +38,15 @@ body {
 }
 
 .wrapper {
-  /* width: 1440px; */
+  width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .header {
-  margin: 0 auto;
   display: flex;
   align-items: center;
-  width: 1440px;
   height: 90px;
   background-color: #0c0c0e;
   background-size: 100% 100%;
@@ -99,7 +97,6 @@ body {
 }
 
 .welcome {
-  min-width: 1440px;
   height: 600px;
   background: url(./img/util/85c1859f825ed82614b2036bc8be037f.jpg);
   background-position: center center;
@@ -123,11 +120,6 @@ body {
   );
 }
 
-.welcome-block-wrapper {
-  width: 1440px;
-  margin: 0 auto;
-}
-
 .welcome-block {
   background-color: #0c0c0e;
   width: 600px;
@@ -148,8 +140,6 @@ body {
 }
 
 .section {
-  width: 1440px;
-  margin: 0 auto;
   padding: 20px 20px 40px;
   background-color: #ffffff;
 }
@@ -286,15 +276,28 @@ body {
 
 .radio-label:before {
   content: "";
-  background: url(./img/util/radio.svg);
-  width: 17px;
-  height: 17px;
+  border: 2px solid;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
   margin-right: 20px;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
 }
 
-.radio-btn:checked + .radio-label:before {
-  background: url(./img/util/radio-checked.svg);
+.season-name {
+  position: relative;
+}
+
+.radio-btn:checked + .radio-label > .season-name::before {
+  content: "";
+  background-color: black;
+  border: 1px solid;
+  border-radius: 50%;
+  left: -33px;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  position: absolute;
 }
 
 .radio-btn:checked + .radio-label {
@@ -302,7 +305,7 @@ body {
 }
 
 .books-section {
-  margin-top: 35px;
+  margin-top: 37px;
   margin-right: 40px;
   display: flex;
   justify-content: space-between;
@@ -514,7 +517,7 @@ body {
 
 .contacts-columns {
   display: flex;
-  gap: 199px; /** !!!!!!!!!НЕ ПО МАКЕТУ!!!!!!!!!!!**/
+  gap: 199px;
 }
 
 .contacts-column {
@@ -536,6 +539,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3px;
 }
 
 .contacts-title {
@@ -613,7 +617,7 @@ body {
   border: 3px solid #bb945f;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: #fff;
-  padding: 20px 20px 30px 20px;
+  padding: 17px 17px 27px 20px;
 }
 
 .card {
@@ -654,11 +658,8 @@ body {
   line-height: 50px; /* 166.667% */
   letter-spacing: 0.6px;
   padding-left: 20px;
+  border: 0px;
 }
-
-/* Желательно сделать ограничения в полях input на
-использование только букв и цифр, а также дефиса.
- Но это правило проверять не нужно. */
 
 form :first-child {
   margin-bottom: 25px;
@@ -690,7 +691,8 @@ form :first-child {
   font-weight: 700;
   line-height: normal;
   letter-spacing: 1px;
-  margin-top: 20px;
+  margin-top: 19px;
+  margin-right: 6px;
   cursor: pointer;
   transition: background-color 0.6s ease;
 }
@@ -707,6 +709,7 @@ form :first-child {
 }
 
 .get-card-title {
+  margin-top: 3px;
   color: #000;
   text-align: center;
   font-family: Forum, serif;
@@ -725,24 +728,24 @@ form :first-child {
   font-weight: 400;
   line-height: 40px; /*200% */
   letter-spacing: 0.4px;
-  margin: 35px 0 35px 0;
+  margin: 32px 0 35px 0;
   text-align: right;
 }
 
 .card-btn-area :first-child {
-  margin-right: 20px;
+  margin-right: 17px;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 1440px;
-  margin: 0 auto;
+  margin-top: 2px;
   height: 250px;
   background: #0c0c0e;
   padding: 20px 20px 44px 20px;
 }
+
 .contacts {
   display: flex;
   justify-content: space-between;
@@ -787,6 +790,11 @@ form :first-child {
   letter-spacing: 2px;
   text-decoration: none;
 }
+
+.school-link {
+  margin-left: 140px;
+}
+
 .year-numbers {
   color: #fff;
   text-align: center;
@@ -796,6 +804,7 @@ form :first-child {
   font-weight: 400;
   letter-spacing: 2px;
 }
+
 .adress-link {
   color: #fff;
   font-family: Inter, serif;
