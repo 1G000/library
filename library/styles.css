@@ -250,14 +250,12 @@ body {
 .seasons-list {
   display: flex;
   gap: 80px;
+  margin-left: -5px;
 }
 
 .radio-btn {
-  display: none;
-}
-
-.seasons-list :nth-child(2) {
-  padding: 5px 5px 5px 0px;
+  appearance: none;
+  position: absolute;
 }
 
 .radio-label {
@@ -266,7 +264,7 @@ body {
   display: flex;
   align-items: end;
   line-height: 24px;
-  padding: 5px;
+  padding: 5px 5px;
   color: #0c0c0e;
   font-family: Inter, serif;
   font-size: 20px;
@@ -278,25 +276,21 @@ body {
   content: "";
   border: 2px solid;
   border-radius: 50%;
-  width: 14px;
-  height: 14px;
+  width: 17px;
+  height: 17px;
   margin-right: 20px;
-  margin-bottom: 0px;
-}
-
-.season-name {
-  position: relative;
+  margin-bottom: 2px;
+  box-sizing: border-box;
 }
 
 .radio-btn:checked + .radio-label > .season-name::before {
   content: "";
   background-color: black;
-  border: 1px solid;
   border-radius: 50%;
-  left: -33px;
-  top: 11px;
-  width: 6px;
-  height: 6px;
+  left: 10px;
+  top: 15px;
+  width: 7px;
+  height: 7px;
   position: absolute;
 }
 
@@ -404,7 +398,7 @@ body {
   left: 20px;
   bottom: 15px;
   cursor: pointer;
-  transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease, border-color 0.6s ease;
 }
 
 .buy-btn-active {
@@ -416,7 +410,7 @@ body {
 
 .buy-btn:hover:not(:disabled) {
   background-color: #bb945f;
-  border: 0px;
+  border-color: #bb945f;
 }
 
 .book {
@@ -741,7 +735,6 @@ form :first-child {
   flex-direction: column;
   justify-content: space-between;
   margin-top: 2px;
-  height: 250px;
   background: #0c0c0e;
   padding: 20px 20px 44px 20px;
 }
@@ -757,8 +750,8 @@ form :first-child {
   flex-direction: column;
 }
 
-.contacts-right-side :first-child {
-  margin-bottom: 10px;
+.opening-hours-text + .opening-hours-text {
+  margin-top: 10px;
 }
 
 .social-media-icons {
@@ -805,14 +798,14 @@ form :first-child {
   letter-spacing: 2px;
 }
 
-.adress-link {
+.address-link {
   color: #fff;
   font-family: Inter, serif;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -831,14 +824,12 @@ form :first-child {
   line-height: 20px; /* 133.333% */
 }
 
-.contacts:after {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background: #fff;
-  position: absolute;
-  top: 118px;
-  left: 0;
-  right: 0;
-  bottom: 0px;
+.social-media-icon a {
+  display: flex;
+}
+
+.dividing-line {
+  border-bottom: 1px solid #fff;
+  margin-top: 30px;
+  margin-bottom: 44px;
 }
