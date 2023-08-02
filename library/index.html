@@ -6,6 +6,7 @@
     <title>Brooklyn Public Library</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./img/util/favicon-32x32.png" type="image/x-icon">
+    <script defer src="./js/index.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -21,6 +22,20 @@
                 </ul>
             </nav>
             <img src="./img/util/icon_profile.svg" class="profile-icon" alt="profile icon">
+            <button class="burger-menu-icon" id="burger-btn">
+                <span class="burger-icon-line"></span>
+                <span class="burger-icon-line"></span>
+                <span class="burger-icon-line"></span>
+            </button>
+            <div class="burger-menu">
+                <ul class="burger-menu-items">
+                    <li class="burger-menu-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="burger-menu-item"><a class="nav-link" href="#favorites">Favorites</a></li>
+                    <li class="burger-menu-item"><a class="nav-link" href="#coffee-shop">Coffee shop</a></li>
+                    <li class="burger-menu-item"><a class="nav-link" href="#section-info">Contacts</a></li>
+                    <li class="burger-menu-item"><a class="nav-link" href="#library-card">Library Card</a></li>
+                </ul>
+            </div>
         </header>
         <main class="main">
 <section class="welcome">
@@ -361,6 +376,6 @@
         </div>
         </footer>
     </div>
-<script src="./js/index.js"></script>
+
 </body>
 </html>
