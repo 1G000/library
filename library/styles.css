@@ -38,7 +38,7 @@ body {
 }
 
 .wrapper {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -55,6 +55,7 @@ body {
 
 .main-title {
   color: #ffffff;
+  min-width: 294px;
   font-family: Forum, serif;
   font-size: 30px;
   font-style: normal;
@@ -182,13 +183,14 @@ body {
 
 .gallery {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
   margin: 20px 0px 40px 0px;
 }
 
 .gallery-item {
-  width: 450px;
+  min-width: 450px;
   height: 560px;
 }
 
@@ -442,8 +444,9 @@ body {
 
 .menu-field {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .menu-title-right {
@@ -511,6 +514,7 @@ body {
 
 .contacts-columns {
   display: flex;
+  flex-wrap: wrap;
   gap: 199px;
 }
 
@@ -600,6 +604,7 @@ body {
 .cards-columns {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -831,4 +836,61 @@ form :first-child {
   border-bottom: 1px solid #fff;
   margin-top: 30px;
   margin-bottom: 44px;
+}
+
+@media (width: 768px) {
+  .nav-list {
+    display: none;
+  }
+
+  .gallery {
+    margin-bottom: 27px;
+  }
+  .gallery-item {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+  }
+
+  .gallery-item:first-child {
+    display: block;
+  }
+
+  .book-article {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .menu-right {
+    margin-left: auto;
+    margin-top: 38px;
+  }
+
+  .contacts-columns {
+    gap: 90px;
+  }
+
+  .map-capture {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cards-columns {
+    display: block;
+  }
+
+  .card-field {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+
+  .get-card-column {
+    align-items: center;
+  }
+
+  .get-card-text {
+    width: 600px;
+    text-align: center;
+  }
 }
