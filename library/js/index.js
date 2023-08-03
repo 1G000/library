@@ -1,6 +1,9 @@
-document.getElementById("burger-btn").addEventListener("click", function () {
-  document.querySelector(".burger-menu").classList.toggle("burger-menu-open");
-});
+document
+  .querySelector(".burger-menu-icon")
+  .addEventListener("click", function () {
+    this.classList.toggle("active");
+    document.querySelector(".burger-menu").classList.toggle("burger-menu-open");
+  });
 
 // console.log(`Вёрстка валидная +10 \n
 // Вёрстка семантическая +16 \n

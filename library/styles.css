@@ -51,7 +51,6 @@ body {
   background-color: #0c0c0e;
   background-size: 100% 100%;
   padding: 0px 20px 0px 20px;
-  position: relative;
 }
 
 .main-title {
@@ -92,6 +91,7 @@ body {
 .profile-icon {
   width: 28px;
   height: 28px;
+  position: relative;
 }
 
 .profile-icon:hover {
@@ -206,9 +206,9 @@ body {
 }
 
 .btn-area {
-  width: 68px;
   display: flex;
   justify-content: space-between;
+  width: 120px;
   margin: 0 auto;
 }
 
@@ -856,21 +856,23 @@ form :first-child {
   width: 45px;
   height: 2px;
   background-color: white;
+  transition: transform 0.5s, opacity 0.5s;
 }
 
 .burger-menu {
-  display: none;
-}
-
-.burger-menu-open {
-  display: block;
+  opacity: 0;
+  transition: opacity 0.5s;
   width: 332px;
   height: 570px;
   background: #000;
   z-index: 999;
   position: absolute;
   top: 90px;
-  left: 433px;
+  right: 0px;
+}
+
+.burger-menu-open {
+  opacity: 1;
 }
 
 .burger-menu-items {
@@ -879,6 +881,17 @@ form :first-child {
   align-items: center;
   gap: 30px;
   margin-bottom: 100px;
+}
+
+.burger-menu-icon.active .burger-icon-line:first-child {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.burger-menu-icon.active .burger-icon-line:nth-child(2) {
+  opacity: 0;
+}
+.burger-menu-icon.active .burger-icon-line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
