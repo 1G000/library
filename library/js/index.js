@@ -1,9 +1,18 @@
-document
-  .querySelector(".burger-menu-icon")
-  .addEventListener("click", function () {
-    this.classList.toggle("active");
-    document.querySelector(".burger-menu").classList.toggle("burger-menu-open");
-  });
+const burgerBtn = document.querySelector(".burger-menu-icon");
+const burgerMenu = document.querySelector(".burger-menu");
+const links = document.querySelectorAll(".nav-link");
+
+burgerBtn.addEventListener("click", () => {
+  burgerBtn.classList.toggle("active");
+  burgerMenu.classList.toggle("burger-menu-open");
+});
+
+links.forEach((link) =>
+  link.addEventListener("click", () => {
+    burgerBtn.classList.remove("active");
+    burgerMenu.classList.remove("burger-menu-open");
+  })
+);
 
 // console.log(`Вёрстка валидная +10 \n
 // Вёрстка семантическая +16 \n
