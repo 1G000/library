@@ -6,6 +6,7 @@
     <title>Brooklyn Public Library</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./img/util/favicon-32x32.png" type="image/x-icon">
+    <script defer src="./js/index.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -21,6 +22,20 @@
                 </ul>
             </nav>
             <img src="./img/util/icon_profile.svg" class="profile-icon" alt="profile icon">
+            <button class="burger-menu-icon" id="burger-btn">
+                <span class="burger-icon-line"></span>
+                <span class="burger-icon-line"></span>
+                <span class="burger-icon-line"></span>
+            </button>
+            <div class="burger-menu" id="burger-div">
+                <ul class="burger-menu-items">
+                    <li class="burger-menu-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="burger-menu-item"><a class="nav-link" href="#favorites">Favorites</a></li>
+                    <li class="burger-menu-item"><a class="nav-link" href="#coffee-shop">Coffee shop</a></li>
+                    <li class="burger-menu-item"><a class="nav-link" href="#section-info">Contacts</a></li>
+                    <li class="burger-menu-item"><a class="nav-link" href="#library-card">Library Card</a></li>
+                </ul>
+            </div>
         </header>
         <main class="main">
 <section class="welcome">
@@ -34,12 +49,18 @@
     <h2 class="section-title" id="about">About</h2>
     <p class="gallery-info">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
     <div class="gallery">
-        <img class="gallery-item" src="./img/image-1.jpg" alt="photo 1">
-        <img class="gallery-item" src="./img/image-2.jpg" alt="photo 2">
-        <img class="gallery-item" src="./img/image-3.jpg" alt="photo 3">
+        <img src="./img/util/arrow-left.svg" class="arrow-left" alt="left arrow">
+        <div class="gallery-items">
+            <img class="gallery-item" src="./img/image-1.jpg" alt="photo 1">
+            <img class="gallery-item" src="./img/image-2.jpg" alt="photo 2">
+            <img class="gallery-item" src="./img/image-3.jpg" alt="photo 3">
+        </div>
+        <img src="./img/util/arrow-right.svg" class="arrow-right" alt="right arrow">
     </div>
     <div class="btn-area">
         <button class="btn btn-active" type="button"></button>
+        <button class="btn" type="button"></button>
+        <button class="btn" type="button"></button>
         <button class="btn" type="button"></button>
         <button class="btn" type="button"></button>
     </div>
@@ -323,7 +344,7 @@
         </div>
         <div class="get-card-column">
             <p class="get-card-title">Get a reader card</p>
-            <p class="get-card-text">You will be able to see a reader card after<br> logging into account or you can register a new<br> account</p>
+            <p class="get-card-text">You will be able to see a reader card after logging into account or you can register a new account</p>
             <div class="card-btn-area">
                 <button class="buy-btn card-btn">Sign Up</button>
                 <button class="buy-btn card-btn">Log in</button>
@@ -361,6 +382,6 @@
         </div>
         </footer>
     </div>
-<script src="./js/index.js"></script>
+
 </body>
 </html>
