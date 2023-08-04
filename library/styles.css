@@ -468,16 +468,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* width: 100%; */
+  gap: 465px;
 }
 
 .menu-title-right {
   text-align: right;
 }
 
+.menu-left {
+  width: 441px;
+}
 .menu-right {
   width: 482px;
-  margin-left: 477px;
 }
 
 .menu-title {
@@ -866,10 +868,10 @@ form :first-child {
   flex-direction: column;
   justify-content: space-between;
   width: 45px;
-  height: 22px;
+  min-height: 22px;
   margin-left: 40px;
   cursor: pointer;
-  background-color: #000;
+  background-color: #0c0c0e;
   border: none;
 }
 
@@ -881,19 +883,20 @@ form :first-child {
 }
 
 .burger-menu {
-  opacity: 0;
-  transition: opacity 0.5s;
+  transition: 0.5s;
   width: 332px;
   height: 480px;
-  background: #000;
+  background-color: #0c0c0e;
   z-index: 999;
   position: absolute;
   top: 90px;
-  right: 0px;
+  right: -332px;
+  visibility: hidden;
 }
 
 .burger-menu-open {
-  opacity: 1;
+  right: 0px;
+  visibility: visible;
 }
 
 .burger-menu-items {
@@ -915,15 +918,17 @@ form :first-child {
   transform: translateY(-10px) rotate(-45deg);
 }
 
-@media (max-width: 768px) {
-  .nav-list {
-    display: none;
+@media (max-width: 1437px) {
+  .menu-field {
+    gap: 50px;
   }
 
-  .burger-menu-icon {
-    display: flex;
+  .menu-right {
+    margin-left: auto;
   }
+}
 
+@media (max-width: 1400px) {
   .gallery {
     align-items: center;
   }
@@ -967,14 +972,34 @@ form :first-child {
   .btn:nth-child(5) {
     display: block;
   }
+}
 
+@media (max-width: 1024px) {
+  .menu-field {
+    gap: 10px;
+  }
+  .nav-list {
+    display: none;
+  }
+
+  .burger-menu-icon {
+    display: flex;
+  }
+}
+
+@media (max-width: 970px) {
+  .menu-field {
+    gap: 0px;
+  }
+  .menu-right {
+    margin-top: 38px;
+  }
+}
+
+@media (max-width: 768px) {
   .book-article {
     margin-left: auto;
     margin-right: auto;
-  }
-  .menu-right {
-    margin-left: auto;
-    margin-top: 38px;
   }
 
   .contacts-columns {
@@ -1005,5 +1030,11 @@ form :first-child {
     text-align: center;
     min-width: 600px;
     margin: 40px 0 40px 0;
+  }
+}
+
+@media (max-width: 740px) {
+  .map-capture {
+    zoom: 0.8;
   }
 }

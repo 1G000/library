@@ -14,6 +14,18 @@ links.forEach((link) =>
   })
 );
 
+window.addEventListener("mouseup", function (event) {
+  if (
+    event.target != burgerMenu &&
+    event.target.parentNode != burgerMenu &&
+    event.target != burgerBtn &&
+    event.target.parentNode != burgerBtn
+  ) {
+    burgerBtn.classList.remove("active");
+    burgerMenu.classList.remove("burger-menu-open");
+  }
+});
+
 // console.log(`Вёрстка валидная +10 \n
 // Вёрстка семантическая +16 \n
 // (В коде страницы присутствуют следующие элементы \n
