@@ -31,6 +31,7 @@ html {
 
 body {
   background-color: grey;
+  overflow-x: hidden;
 }
 
 .hidden {
@@ -940,19 +941,25 @@ form :first-child {
   }
 
   .arrow-left {
+    border: none;
+    background: url("./img/util/arrow-left.svg");
     display: flex;
     width: 24px;
     height: 24px;
+    padding: 10px;
     margin-left: 57px;
     margin-top: 40px;
   }
 
   .arrow-right {
+    border: none;
+    background: url("./img/util/arrow-right.svg");
     display: flex;
     width: 24px;
     height: 24px;
-    margin-right: 57px;
-    margin-top: 40px;
+    padding: 10px;
+    margin-right: 59px;
+    margin-top: 37px;
   }
 
   .gallery-item:first-child {
@@ -971,6 +978,16 @@ form :first-child {
 
   .btn:nth-child(5) {
     display: block;
+  }
+}
+
+@media (max-width: 1245px) {
+  .books-section {
+    flex-direction: column;
+  }
+  .book-article {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -997,11 +1014,6 @@ form :first-child {
 }
 
 @media (max-width: 768px) {
-  .book-article {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .contacts-columns {
     gap: 90px;
   }
