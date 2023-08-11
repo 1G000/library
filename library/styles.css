@@ -884,20 +884,50 @@ form :first-child {
 }
 
 .burger-menu {
-  transition: 0.5s;
+  position: absolute;
+  visibility: hidden;
+  transform: translateX();
+  transition: 0.5s ease-in-out;
   width: 332px;
   height: 480px;
   background-color: #0c0c0e;
   z-index: 999;
-  position: absolute;
   top: 90px;
-  right: -332px;
-  visibility: hidden;
+  right: 0;
+  animation: close 0.5s ease-in-out;
+}
+
+@keyframes close {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(50px);
+  }
 }
 
 .burger-menu-open {
-  right: 0px;
   visibility: visible;
+  transform: translateX(0);
+  transition: 0.5s;
+  animation: comein 0.5s ease-in-out;
+}
+
+@keyframes comein {
+  0% {
+    transform: translateX(50px);
+  }
+
+  50% {
+    transform: translateX(-50px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 .burger-menu-items {
@@ -1011,6 +1041,8 @@ form :first-child {
   .menu-right {
     margin-top: 38px;
   }
+.seasons-list {
+  gap: 40px;
 }
 
 @media (max-width: 768px) {
@@ -1025,6 +1057,13 @@ form :first-child {
 
   .cards-columns {
     display: block;
+  }
+
+  .footer {
+    margin-top: 0px;
+  }
+  .school-link {
+    margin-left: 90px;
   }
 
   .card-field {
