@@ -1,3 +1,4 @@
+window.addEventListener("resize", closeBurgerOnResize);
 const burgerBtn = document.querySelector(".burger-menu-icon");
 const burgerMenu = document.querySelector(".burger-menu");
 const links = document.querySelectorAll(".nav-link");
@@ -25,6 +26,15 @@ window.addEventListener("mouseup", function (event) {
     burgerMenu.classList.remove("burger-menu-open");
   }
 });
+
+function closeBurgerOnResize() {
+  let screenWidth = window.innerWidth;
+
+  if (screenWidth > 1024) {
+    burgerMenu.classList.remove("burger-menu-open");
+    burgerBtn.classList.remove("active");
+  }
+}
 
 console.log(`
 Вёрстка соответствует макету. Ширина экрана 768px +26 Выполнено\n
