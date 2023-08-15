@@ -39,7 +39,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1440px;
+  max-width: 2500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1041,8 +1041,6 @@ form :first-child {
   .menu-right {
     margin-top: 38px;
   }
-.seasons-list {
-  gap: 40px;
 }
 
 @media (max-width: 768px) {
@@ -1087,5 +1085,8 @@ form :first-child {
 @media (max-width: 740px) {
   .map-capture {
     zoom: 0.8;
+  }
+  .seasons-list {
+    gap: 40px;
   }
 }
