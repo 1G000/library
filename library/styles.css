@@ -39,7 +39,7 @@ body {
 }
 
 .wrapper {
-  max-width: 2500px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
