@@ -189,10 +189,12 @@ body {
 
 .gallery-items {
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
-  margin: 20px 0px 40px 0px;
+  margin: 0px 0px 40px 0px;
+  position: relative;
+  left: 0px;
+  transition: all ease 1s;
 }
 
 .gallery-item {
@@ -949,6 +951,14 @@ form :first-child {
   transform: translateY(-10px) rotate(-45deg);
 }
 
+.gallery-wrapper {
+  width: 450px;
+  height: 560px;
+  background-color: red;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 @media (max-width: 1437px) {
   .menu-field {
     gap: 50px;
@@ -960,14 +970,8 @@ form :first-child {
 }
 
 @media (max-width: 1400px) {
-  .gallery {
-    align-items: center;
-  }
   .gallery-items {
     margin-bottom: 27px;
-  }
-  .gallery-item {
-    display: none;
   }
 
   .arrow-left {
@@ -990,12 +994,6 @@ form :first-child {
     padding: 10px;
     margin-right: 59px;
     margin-top: 37px;
-  }
-
-  .gallery-item:first-child {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .btn-area {
