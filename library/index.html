@@ -22,6 +22,14 @@
                 </ul>
             </nav>
             <img src="./img/util/icon_profile.svg" class="profile-icon" alt="profile icon">
+            <div class="drop-menu-not-auth">
+                <h3 class="drop-menu-title">Profile</h3>
+                <hr class="drop-menu-line">
+                <div class="drop-menu-items">
+                    <span class="drop-menu-item"><a class = "drop-menu-text">Log In</a></span>
+                    <span class="drop-menu-item"><a class = "drop-menu-text">Register</a></span>
+                </div>
+            </div>
             <button class="burger-menu-icon" id="burger-btn">
                 <span class="burger-icon-line"></span>
                 <span class="burger-icon-line"></span>
@@ -38,6 +46,25 @@
             </div>
         </header>
         <main class="main">
+            <div class="modal-register">
+                <h3 class="modal-title">REGISTER</h3>
+                <button class="close-btn"></button>
+                <form class="modal-form">
+                    <p class="modal-text">First name</p>
+                    <input class="modal-input" type="text" name="name" >
+                    <p class="modal-text">Last name</p>
+                    <input class="modal-input" type="text" name="name" >
+                    <p class="modal-text">E-mail</p>
+                    <input class="modal-input" type="email" name="email" >
+                    <p class="modal-text">Password</p>
+                    <input class="modal-input" type="password" name="password" >
+                    <button class="sign-up-btn" type="submit">Sign Up</button>
+                    </form>
+                    <div class="modal-bottom">
+                    <span class="modal-bottom-text">Already have an account?</span>
+                    <a class="modal-link">Login</a>
+                    </div>
+            </div>
 <section class="welcome">
     <h2 class="hidden">welcome</h2>
         <div class="welcome-block">
@@ -338,7 +365,7 @@
             <div class="card-field">
                 <div class="card">
                     <h5 class="card-title">Brooklyn Public Library</h5>
-                    <form>
+                    <form class="holder-form">
                         <input class="holder-info" type="text" placeholder="Reader's name ">
                         <input class="holder-info" type="text" placeholder="Card number">
                     </form>

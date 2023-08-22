@@ -137,6 +137,25 @@ const thisSeason = (index) => {
   }
 
   seasonSections[index].style.display = "flex";
-  seasonSections[index].style.opacity = 1;
+  setTimeout(() => ((seasonSections[index].style.opacity = 1), 0));
   seasonSections[index].style.visibility = "visible";
 };
+
+//dropdown menu
+
+const profileIcon = document.querySelector(".profile-icon");
+const dropdownNotAuth = document.querySelector(".drop-menu-not-auth");
+profileIcon.addEventListener("click", () => {
+  dropdownNotAuth.classList.toggle("drop-menu-not-auth-open");
+});
+
+window.addEventListener("mouseup", function (event) {
+  if (
+    event.target != dropdownNotAuth &&
+    event.target.parentNode != dropdownNotAuth &&
+    event.target != profileIcon &&
+    event.target.parentNode != profileIcon
+  ) {
+    dropdownNotAuth.classList.remove("drop-menu-not-auth-open");
+  }
+});
