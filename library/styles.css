@@ -34,10 +34,6 @@ body {
   overflow-x: hidden;
 }
 
-.hidden {
-  display: none;
-}
-
 .wrapper {
   max-width: 1440px;
   margin: 0 auto;
@@ -185,13 +181,14 @@ body {
 
 .gallery {
   display: flex;
+  margin: 20px 0px 40px 0px;
 }
 
 .gallery-items {
   display: flex;
   width: 100%;
+  gap: 25px;
   justify-content: space-between;
-  margin: 0px 0px 40px 0px;
   position: relative;
   left: 0px;
   transition: all ease 1s;
@@ -224,7 +221,6 @@ body {
   display: flex;
   justify-content: space-between;
   width: 68px;
-
   margin: 0 auto;
 }
 
@@ -236,6 +232,11 @@ body {
   border-radius: 50%;
   border: 0px;
   background-color: #0c0c0e;
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: #bb945f;
 }
 
 .btn:nth-child(4) {
@@ -326,11 +327,14 @@ body {
 }
 
 .books-section {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
   margin-top: 37px;
   margin-right: 40px;
-  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  transition: visibility 0.5s;
 }
 
 .book-article {
@@ -952,9 +956,8 @@ form :first-child {
 }
 
 .gallery-wrapper {
-  width: 450px;
+  width: 1440px;
   height: 560px;
-  background-color: red;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -970,10 +973,12 @@ form :first-child {
 }
 
 @media (max-width: 1400px) {
-  .gallery-items {
-    margin-bottom: 27px;
+  .gallery-wrapper {
+    width: 450px;
+    height: 560px;
+    margin: 0 auto;
+    overflow: hidden;
   }
-
   .arrow-left {
     border: none;
     background: url("./img/util/arrow-left.svg");
@@ -982,7 +987,8 @@ form :first-child {
     height: 24px;
     padding: 10px;
     margin-left: 57px;
-    margin-top: 40px;
+    margin-top: 290px;
+    opacity: 0.5;
   }
 
   .arrow-right {
@@ -993,7 +999,7 @@ form :first-child {
     height: 24px;
     padding: 10px;
     margin-right: 59px;
-    margin-top: 37px;
+    margin-top: 290px;
   }
 
   .btn-area {
@@ -1033,6 +1039,9 @@ form :first-child {
 }
 
 @media (max-width: 970px) {
+  .gallery {
+    margin-bottom: 23px;
+  }
   .menu-field {
     gap: 0px;
   }
@@ -1042,6 +1051,13 @@ form :first-child {
 }
 
 @media (max-width: 768px) {
+  .seasons-list {
+    position: sticky;
+    border-radius: 10px;
+    top: 10px;
+    z-index: 99;
+    background-color: white;
+  }
   .contacts-columns {
     gap: 90px;
   }

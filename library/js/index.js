@@ -40,39 +40,103 @@ function closeBurgerOnResize() {
 
 //Слайдер
 
-let offset = 0;
 const slider = document.querySelector(".gallery-items");
 const btnRight = document.querySelector(".arrow-right");
 const btnLeft = document.querySelector(".arrow-left");
-
+const dots = document.querySelectorAll(".btn");
+let offset = 0;
+let dotIndex = 0;
 btnLeft.disabled = true;
 btnRight.disabled = false;
 
 function toRight() {
-  offset += 450;
+  offset += 475;
+  dotIndex++;
   slider.style.left = -offset + "px";
   btnLeft.disabled = false;
   btnRight.disabled = false;
-  if (offset === 0) {
-    btnLeft.disabled = true;
-  }
-  if (offset === 1800) {
+  btnLeft.style.opacity = 1;
+  if (offset === 1900) {
     btnRight.disabled = true;
+    btnRight.style.opacity = 0.5;
   }
+  thisSlide(dotIndex);
 }
 
 function toLeft() {
-  offset -= 450;
+  offset -= 475;
+  dotIndex--;
   slider.style.left = -offset + "px";
   btnLeft.disabled = false;
   btnRight.disabled = false;
+  btnRight.style.opacity = 1;
   if (offset === 0) {
     btnLeft.disabled = true;
+    btnLeft.style.opacity = 0.5;
   }
-  if (offset === 1800) {
-    btnRight.disabled = true;
-  }
+  thisSlide(dotIndex);
 }
 
 btnRight.addEventListener("click", toRight);
 btnLeft.addEventListener("click", toLeft);
+
+//Кнопки пагинации
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    offset = 475 * index;
+    slider.style.left = -offset + "px";
+    dotIndex = index;
+    thisSlide(dotIndex);
+    btnLeft.disabled = false;
+    btnRight.disabled = false;
+    btnRight.style.opacity = 1;
+    btnLeft.style.opacity = 1;
+    if (offset === 0) {
+      btnLeft.disabled = true;
+      btnLeft.style.opacity = 0.5;
+    }
+    if (offset === 1900) {
+      btnRight.disabled = true;
+      btnRight.style.opacity = 0.5;
+    }
+  });
+});
+
+const thisSlide = (index) => {
+  for (let dot of dots) {
+    dot.classList.remove("btn-active");
+    dot.style.cursor = "pointer";
+    dot.disabled = false;
+  }
+  dots[index].classList.add("btn-active");
+  dots[index].style.cursor = "auto";
+  dots[index].disabled = true;
+};
+
+//Радиокнопки
+
+const radioButtons = document.querySelectorAll(".radio-btn");
+const seasonSections = document.querySelectorAll(".books-section");
+
+seasonSections[0].style.display = "flex";
+seasonSections[0].style.opacity = 1;
+seasonSections[0].style.visibility = "visible";
+
+radioButtons.forEach((radioButton, index) => {
+  radioButton.addEventListener("click", () => {
+    thisSeason(index);
+  });
+});
+
+const thisSeason = (index) => {
+  for (let season of seasonSections) {
+    season.style.display = "none";
+    season.style.visibility = "hidden";
+    season.style.opacity = 0;
+  }
+
+  seasonSections[index].style.display = "flex";
+  seasonSections[index].style.opacity = 1;
+  seasonSections[index].style.visibility = "visible";
+};
