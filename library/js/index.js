@@ -119,10 +119,6 @@ const thisSlide = (index) => {
 const radioButtons = document.querySelectorAll(".radio-btn");
 const seasonSections = document.querySelectorAll(".books-section");
 
-seasonSections[0].style.display = "flex";
-seasonSections[0].style.opacity = 1;
-seasonSections[0].style.visibility = "visible";
-
 radioButtons.forEach((radioButton, index) => {
   radioButton.addEventListener("click", () => {
     thisSeason(index);
@@ -130,32 +126,127 @@ radioButtons.forEach((radioButton, index) => {
 });
 
 const thisSeason = (index) => {
-  for (let season of seasonSections) {
-    season.style.display = "none";
-    season.style.visibility = "hidden";
-    season.style.opacity = 0;
+  for (let i = 0; i < seasonSections.length; i++) {
+    if (i === index) {
+      seasonSections[i].classList.remove("hidden");
+    } else {
+      seasonSections[i].classList.add("hidden");
+    }
   }
-
-  seasonSections[index].style.display = "flex";
-  setTimeout(() => ((seasonSections[index].style.opacity = 1), 0));
-  seasonSections[index].style.visibility = "visible";
 };
 
 //dropdown menu
 
 const profileIcon = document.querySelector(".profile-icon");
 const dropdownNotAuth = document.querySelector(".drop-menu-not-auth");
+function getDropMenu(el, firstClass, secondClass, animationTime) {
+  if (!el.classList.contains(firstClass)) {
+    el.classList.add(firstClass);
+    el.classList.remove(secondClass);
+  } else {
+    el.classList.add(secondClass);
+    window.setTimeout(function () {
+      el.classList.remove(firstClass);
+    }, animationTime);
+  }
+}
+
 profileIcon.addEventListener("click", () => {
-  dropdownNotAuth.classList.toggle("drop-menu-not-auth-open");
+  getDropMenu(dropdownNotAuth, "is-visible", "is-hidden", 500);
 });
 
 window.addEventListener("mouseup", function (event) {
   if (
+    dropdownNotAuth.classList.contains("is-visible") &&
     event.target != dropdownNotAuth &&
     event.target.parentNode != dropdownNotAuth &&
     event.target != profileIcon &&
     event.target.parentNode != profileIcon
   ) {
-    dropdownNotAuth.classList.remove("drop-menu-not-auth-open");
+    getDropMenu(dropdownNotAuth, "is-visible", "is-hidden", 500);
+  }
+});
+
+//modal window
+const registerModalWindow = document.querySelector(".modal-register");
+const registerBtn = document.querySelector("#register");
+const loginBtn = document.querySelector("#login");
+const backDrop = document.querySelector(".backdrop");
+const closeBtn = document.querySelector(".close-btn");
+
+function getModal(
+  el1,
+  el2,
+  elOneFirstClass,
+  elOneSecondClass,
+  elTwoFirstClass,
+  elTwoSecondClass,
+  animationTime
+) {
+  if (
+    !el1.classList.contains(elOneFirstClass) &&
+    !el2.classList.contains(elTwoSecondClass)
+  ) {
+    el1.classList.add(elOneFirstClass);
+    el2.classList.add(elTwoSecondClass);
+    el1.classList.remove(elOneSecondClass);
+    el2.classList.remove(elTwoFirstClass);
+  } else {
+    el1.classList.add(elOneSecondClass);
+    el2.classList.add(elTwoFirstClass);
+    window.setTimeout(function () {
+      el1.classList.remove(elOneFirstClass);
+      el2.classList.remove(elTwoSecondClass);
+    }, animationTime);
+  }
+}
+
+loginBtn.addEventListener("click", () => {
+  getModal(
+    registerModalWindow,
+    backDrop,
+    "is-visible",
+    "is-hidden",
+    "is-hidden",
+    "is-visible",
+    0
+  );
+});
+
+registerBtn.addEventListener("click", () => {
+  getModal(
+    registerModalWindow,
+    backDrop,
+    "is-visible",
+    "is-hidden",
+    "is-hidden",
+    "is-visible",
+    500
+  );
+});
+
+closeBtn.addEventListener("click", () => {
+  getModal(
+    registerModalWindow,
+    backDrop,
+    "is-visible",
+    "is-hidden",
+    "is-hidden",
+    "is-visible",
+    500
+  );
+});
+
+window.addEventListener("mouseup", function (event) {
+  if (event.target == backDrop) {
+    getModal(
+      registerModalWindow,
+      backDrop,
+      "is-visible",
+      "is-hidden",
+      "is-hidden",
+      "is-visible",
+      500
+    );
   }
 });

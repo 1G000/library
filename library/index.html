@@ -26,8 +26,8 @@
                 <h3 class="drop-menu-title">Profile</h3>
                 <hr class="drop-menu-line">
                 <div class="drop-menu-items">
-                    <span class="drop-menu-item"><a class = "drop-menu-text">Log In</a></span>
-                    <span class="drop-menu-item"><a class = "drop-menu-text">Register</a></span>
+                    <span class="drop-menu-item" id="login"><a class = "drop-menu-text">Log In</a></span>
+                    <span class="drop-menu-item" id="register"><a class = "drop-menu-text">Register</a></span>
                 </div>
             </div>
             <button class="burger-menu-icon" id="burger-btn">
@@ -46,18 +46,19 @@
             </div>
         </header>
         <main class="main">
+            <div class="backdrop">
             <div class="modal-register">
                 <h3 class="modal-title">REGISTER</h3>
                 <button class="close-btn"></button>
                 <form class="modal-form">
-                    <p class="modal-text">First name</p>
-                    <input class="modal-input" type="text" name="name" >
-                    <p class="modal-text">Last name</p>
-                    <input class="modal-input" type="text" name="name" >
-                    <p class="modal-text">E-mail</p>
-                    <input class="modal-input" type="email" name="email" >
-                    <p class="modal-text">Password</p>
-                    <input class="modal-input" type="password" name="password" >
+                    <label for="username" class="modal-text">First name</label>
+                    <input class="modal-input" type="text" name="name" required>
+                    <label for="lastname" class="modal-text">Last name</label>
+                    <input class="modal-input" type="text" name="name" required>
+                    <label for="email" class="modal-text">E-mail</label>
+                    <input class="modal-input" type="email" name="email" required>
+                    <label for="password" class="modal-text" >Password</label>
+                    <input class="modal-input" type="password" name="password" minlength="8" required>
                     <button class="sign-up-btn" type="submit">Sign Up</button>
                     </form>
                     <div class="modal-bottom">
@@ -65,6 +66,7 @@
                     <a class="modal-link">Login</a>
                     </div>
             </div>
+        </div>
 <section class="welcome">
     <h2 class="hidden">welcome</h2>
         <div class="welcome-block">
@@ -109,6 +111,7 @@
         <input type="radio" name='season' class="radio-btn" id="autumn">
             <label class="radio-label" for="autumn"><span class="season-name">Autumn</span></label>
     </div>
+    <div class="books-wrapper">
     <div class="books-section">
         <article class="book-article">
             <p class="article-title">Staff Picks</p>
@@ -147,11 +150,11 @@
                 <p class="book-author">By Clive Irving</p>
             </header>
             <p class="book-description">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
-            <button disabled type="button" class="buy-btn buy-btn-active">Own</button>
+            <button type="button" class="buy-btn">Buy</button>
             <img src='./img/books-covers/the-last-queen.jpg' class="book" alt="The Last Queen">
         </article>
     </div>
-    <div class="books-section">
+    <div class="books-section hidden">
         <article class="book-article">
             <p class="article-title">Staff Picks</p>
             <header>
@@ -193,7 +196,7 @@
             <img src='./img/books-covers/cruz.jpg' class="book" alt="Dominicana">
         </article>
     </div>
-    <div class="books-section">
+    <div class="books-section hidden">
         <article class="book-article">
             <p class="article-title">Staff Picks</p>
             <header>
@@ -235,7 +238,7 @@
             <img src='./img/books-covers/kiana.jpg' class="book" alt="Shark Dialogues: A Novel">
         </article>
     </div>
-    <div class="books-section">
+    <div class="books-section hidden">
         <article class="book-article">
             <p class="article-title">Staff Picks</p>
             <header>
@@ -277,6 +280,7 @@
             <img src='./img/books-covers/slug.jpg' class="book" alt="Slug: And Other Stories">
         </article>
     </div>
+</div>
 </section>
 <section class="section section-coffee-shop">
     <h2 class="section-title" id="coffee-shop">Coffee Shop</h2>
