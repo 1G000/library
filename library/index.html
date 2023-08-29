@@ -67,6 +67,21 @@
                     </div>
             </div>
         </div>
+        <div class="modal-login">
+            <h3 class="modal-title">LOGIN</h3>
+            <button class="close-btn"></button>
+            <form class="modal-form">
+                <label for="email" class="modal-text">E-mail or readers card</label>
+                <input class="modal-input" type="email" name="email" required>
+                <label for="password" class="modal-text" >Password</label>
+                <input class="modal-input" type="password" name="password" minlength="8" required>
+                <button class="sign-up-btn" type="submit">Log In</button>
+                </form>
+                <div class="modal-bottom">
+                <span class="modal-bottom-text">Don’t have an account?</span>
+                <a class="modal-link">Register</a>
+                </div>
+        </div>
 <section class="welcome">
     <h2 class="hidden">welcome</h2>
         <div class="welcome-block">
@@ -416,6 +431,103 @@
             <a class="footer-link" href="https://github.com/1G000/">Gorbatovskiy Igor</a>
         </div>
         </footer>
+
+        <section class="section section-library-card">
+            <h2 class="section-title" id="library-card">Digital Library Cards</h2>
+            <div class="cards-columns">
+                <div class="find-card-column">
+                    <p class="find-card-title">Your Library card</p>
+                    <div class="card-field">
+                        <div class="card">
+                            <h5 class="card-title">Brooklyn Public Library</h5>
+                            <form class="holder-form">
+                                <input class="holder-info" type="text" placeholder="Reader's name ">
+                                <input class="holder-info" type="text" placeholder="Card number">
+                            </form>
+                        </div>
+                        <div class="holder-stats">
+                            <div class="holder-stats-row"><span class="holder-stats-text-content">Visits</span><img class='holder-stats-ico' src='./img/util/Union.svg'><span class="holder-stats-text-content">12</span></div>
+                            <div class="holder-stats-row"><span class="holder-stats-text-content">Bonuses</span><img class='holder-stats-ico' src='./img/util/Star 1.svg'><span class="holder-stats-text-content">345</span></div>
+                            <div class="holder-stats-row"><span class="holder-stats-text-content">Books</span><img class='holder-stats-ico' src='./img/util/book.svg'><span class="holder-stats-text-content">500</span></div>
+                            </div>
+                    </div>
+                </div>
+                <div class="get-card-column">
+                    <p class="get-card-title">Visit your profile</p>
+                    <p class="get-card-text">With a digital library card you get free access to the Library’s wide array of digital resources including e-books, databases, educational resources, and more.</p>
+                    <div class="card-btn-area">
+                        <button class="buy-btn card-btn">Profile</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+<div class="buy-a-card-modal">
+    <header class="buy-a-card-modal-header">
+        <h2 class="buy-a-card-modal-title">Buy a library card</h2>
+        <img class="buy-a-card-modal-close-btn" src='./img/util/close_btn_black.svg'>
+    </header>
+    <div class="buy-a-card-modal-main">
+        <div class='buy-a-card-modal-left-side'>
+        <form class="modal-form">
+            <label for="cardnumber" class="modal-text">Bank card number</label>
+            <input class="modal-input" type="text" name="cardnumber" required>
+            <label for="code" class="modal-text">Expiration code</label>
+            <div class="expiration-code-input-area">
+            <input class="modal-input-mini" type="text" name="code" required>
+            <input class="modal-input-mini" type="text" name="code" required>
+            </div>
+            <label for="cvc" class="modal-text">CVC</label>
+            <input class="modal-input-cvc" type="email" name="cvc" required>
+            <label for="cardholdername" class="modal-text" >Cardholder name</label>
+            <input class="modal-input" type="password" name="cardholdername" required>
+            <label for="postalcode" class="modal-text" >Postal code</label>
+            <input class="modal-input" name="postalcode" required>
+            <label for="city" class="modal-text" >City / Town</label>
+            <input class="modal-input" name="city" required>
+            <div class="btn-price-container">
+            <button class="buy-a-card-modal-btn" type="submit">Buy</button>
+            <span class='buy-a-card-modal-price'>$ 25.00</span>
+            </div>
+            </form>
+        </div>
+        <div class='buy-a-card-modal-right-side'>
+            <p class='buy-a-card-modal-textcontent'>If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="profile-modal">
+    <div class="profile-modal-left-side">
+        <img class="profile-modal-ico" src="#">
+        <span class="profile-modal-username">John Doe</span>
+    </div>
+    <div class="profile-modal-right-side">
+        <h2 class="profile-modal-title">My profile</h2>
+        <button class="profile-modal-close-btn"></button>
+        <div class="profile-holder-stats">
+            <div class="holder-stats-row"><span class="profile-holder-stats-text-content">Visits</span><img class='profile-holder-stats-ico' src='./img/util/Union.svg'><span class="holder-stats-text-content">12</span></div>
+            <div class="holder-stats-row"><span class="profile-holder-stats-text-content">Bonuses</span><img class='profile-holder-stats-ico' src='./img/util/Star 1.svg'><span class="holder-stats-text-content">345</span></div>
+            <div class="holder-stats-row"><span class="profile-holder-stats-text-content">Books</span><img class='profile-holder-stats-ico' src='./img/util/book.svg'><span class="holder-stats-text-content">500</span></div>
+        </div>
+        <div>
+            <p class="rented-books-list-title">Rented books</p>
+            <ul class="rented-books-list">
+                <li class="rented-book">First book</li>
+                <li class="rented-book">Second book</li>
+            </ul>
+            <div class="holder-modal-card-number-area">
+                <p class="card-number-textcontent">Card number</p>
+                <span class="card-number">F00234030</span>
+                <span><img src="./img/util/icon copy.svg"></span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
     </div>
 
 </body>

@@ -537,7 +537,7 @@ body {
 .item-price {
   position: relative;
   color: #000;
-  font-family: Forum, serif;
+  font-family: Forum-bold, serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -629,7 +629,8 @@ body {
 }
 
 .phone-number:hover,
-.mail-address:hover {
+.mail-address:hover,
+.drop-menu-text:hover {
   cursor: pointer;
   color: #bb945f;
 }
@@ -651,6 +652,244 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.buy-a-card-modal {
+  width: 650px;
+}
+
+.buy-a-card-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  height: 60px;
+}
+
+.buy-a-card-modal-title {
+  color: #fff;
+  text-align: center;
+  font-family: Forum, serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 50% */
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.buy-a-card-modal-close-btn {
+  position: absolute;
+  left: 608px;
+}
+
+.buy-a-card-modal-main {
+  display: flex;
+  height: 480px;
+  background-color: #fff;
+  padding: 30px 40px 40px 40px;
+  gap: 40px;
+}
+
+.buy-a-card-modal-textcontent {
+  color: #8e8e8e;
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 133.333% */
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.btn-price-container {
+  display: flex;
+  margin-left: 0px;
+  margin-right: auto;
+
+  align-items: end;
+  gap: 25px;
+}
+
+.buy-a-card-modal-btn {
+  align-self: start;
+  width: 75px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid #0c0c0e;
+  background-color: #fff;
+  text-align: center;
+  font-family: Inter, serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.buy-a-card-modal-price {
+  color: #0c0c0e;
+  font-family: Inter-Bold;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 100% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.profile-modal {
+  display: flex;
+  position: relative;
+}
+.profile-modal-left-side {
+  display: flex;
+  flex-direction: column;
+  width: 170px;
+  padding-top: 139px;
+  padding-bottom: 139px;
+}
+
+.profile-holder-stats {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.profile-holder-stats-text-content {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 100% */
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.profile-holder-stats-ico {
+  width: 20px;
+  height: 21px;
+  margin-bottom: 10px;
+}
+
+.profile-modal-right-side {
+  width: 430px;
+  background-color: #fff;
+  padding: 40px 20px 39px 20px;
+}
+
+.profile-modal-title {
+  color: #000;
+  text-align: left;
+  font-family: Forum;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 50% */
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.profile-modal-close-btn {
+  position: absolute;
+  border: none;
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  left: 558px;
+  top: 23px;
+  background-image: url("./img/util/close_btn.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rented-books-list-title {
+  color: #0c0c0e;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.rented-books-list {
+  margin-bottom: 30px;
+}
+
+.rented-book {
+  color: #000;
+  font-family: Inter, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 100% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  margin-left: 27px;
+}
+
+.holder-modal-card-number-area {
+  display: flex;
+  gap: 15px;
+}
+
+.card-number-textcontent {
+  color: #0c0c0e;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.card-number {
+  color: #bb945f;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.profile-modal-ico {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px auto;
+}
+
+.profile-modal-username {
+  background-color: #fff;
+  width: 120px;
+  height: 30px;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 100% */
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.profile-modal-left-side {
+  width: 170px;
+  height: 403px;
+  background-color: #000;
 }
 
 .card-field {
@@ -942,6 +1181,38 @@ body {
   display: flex;
 }
 
+.holder-stats {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  margin-top: 15px;
+  margin-bottom: -12px;
+}
+
+.holder-stats-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.holder-stats-text-content {
+  text-align: center;
+  color: #000;
+  text-align: center;
+  font-family: Inter, serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 200% */
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+}
+
+.holder-stats-ico {
+  width: 20px;
+  height: 21px;
+}
+
 @keyframes close {
   0% {
     transform: translateX(0);
@@ -1020,6 +1291,7 @@ body {
   }
   .arrow-left {
     border: none;
+    cursor: pointer;
     background: url("./img/util/arrow-left.svg");
     display: flex;
     width: 24px;
@@ -1034,6 +1306,7 @@ body {
     border: none;
     background: url("./img/util/arrow-right.svg");
     display: flex;
+    cursor: pointer;
     width: 24px;
     height: 24px;
     padding: 10px;
@@ -1204,7 +1477,6 @@ body {
 }
 
 .drop-menu-item {
-  cursor: pointer;
 }
 
 .drop-menu-text {
@@ -1270,6 +1542,19 @@ body {
   animation: fadeOutModal 1s ease-in-out;
 }
 
+.modal-login {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 25px;
+  width: 250px;
+  height: 262px;
+  background-color: white;
+  z-index: 99;
+  opacity: 1;
+  position: relative;
+}
+
 .modal-title {
   margin-bottom: 20px;
   color: #000;
@@ -1319,6 +1604,27 @@ body {
   height: 20px;
   border: 1px solid #bb945f;
   margin: 10px 0px;
+}
+
+.expiration-code-input-area {
+  display: flex;
+  margin-left: 0px;
+  margin-right: auto;
+  gap: 10px;
+}
+
+.modal-input-mini {
+  width: 45px;
+  height: 20px;
+  border: 1px solid #bb945f;
+  margin: 10px 0px;
+}
+
+.modal-input-cvc {
+  width: 45px;
+  height: 20px;
+  border: 1px solid #bb945f;
+  margin: 10px auto 20px 0;
 }
 
 .sign-up-btn {
