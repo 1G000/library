@@ -1,3 +1,9 @@
+// Проверить текущего пользователя
+// const localStorageProfile = localStorage.getItem("profile");
+// if (localStorageProfile) {
+//   window.profile = JSON.parse(localStorageProfile);
+// }
+
 // Бургер-меню
 
 window.addEventListener("resize", closeBurgerOnResize);
@@ -137,7 +143,7 @@ const thisSeason = (index) => {
 
 //dropdown menu
 
-const profileIcon = document.querySelector(".profile-icon");
+const profileBtn = document.querySelector(".profile-btn");
 const dropdownNotAuth = document.querySelector(".drop-menu-not-auth");
 function getDropMenu(el, firstClass, secondClass, animationTime) {
   if (!el.classList.contains(firstClass)) {
@@ -151,7 +157,7 @@ function getDropMenu(el, firstClass, secondClass, animationTime) {
   }
 }
 
-profileIcon.addEventListener("click", () => {
+profileBtn.addEventListener("click", () => {
   getDropMenu(dropdownNotAuth, "is-visible", "is-hidden", 500);
 });
 
@@ -160,93 +166,54 @@ window.addEventListener("mouseup", function (event) {
     dropdownNotAuth.classList.contains("is-visible") &&
     event.target != dropdownNotAuth &&
     event.target.parentNode != dropdownNotAuth &&
-    event.target != profileIcon &&
-    event.target.parentNode != profileIcon
+    event.target != profileBtn &&
+    event.target.parentNode != profileBtn
   ) {
     getDropMenu(dropdownNotAuth, "is-visible", "is-hidden", 500);
   }
 });
 
-//modal window
-const registerModalWindow = document.querySelector(".modal-register");
+//modal windows
+
 const registerBtn = document.querySelector("#register");
 const loginBtn = document.querySelector("#login");
-const backDrop = document.querySelector(".backdrop");
-const closeBtn = document.querySelector(".close-btn");
-
-function getModal(
-  el1,
-  el2,
-  elOneFirstClass,
-  elOneSecondClass,
-  elTwoFirstClass,
-  elTwoSecondClass,
-  animationTime
-) {
-  if (
-    !el1.classList.contains(elOneFirstClass) &&
-    !el2.classList.contains(elTwoSecondClass)
-  ) {
-    el1.classList.add(elOneFirstClass);
-    el2.classList.add(elTwoSecondClass);
-    el1.classList.remove(elOneSecondClass);
-    el2.classList.remove(elTwoFirstClass);
-  } else {
-    el1.classList.add(elOneSecondClass);
-    el2.classList.add(elTwoFirstClass);
-    window.setTimeout(function () {
-      el1.classList.remove(elOneFirstClass);
-      el2.classList.remove(elTwoSecondClass);
-    }, animationTime);
-  }
-}
+const logoutBtn = document.querySelector("#logout");
+const myProfileBtn = document.querySelector("#my-profile");
+const backDropRegister = document.querySelector(".backdrop.register");
+const backDropLogin = document.querySelector(".backdrop.login");
+const backDropProfile = document.querySelector(".backdrop.profile");
+const registerCloseBtn = document.querySelector(".modal-register .close-btn");
+const loginCloseBtn = document.querySelector(".modal-login .close-btn");
+const profileCloseBtn = document.querySelector(".profile-modal-close-btn");
+const loginFromRegisterBtn = document.querySelector(
+  ".modal-register .modal-link"
+);
+const registerFromLoginBtn = document.querySelector(".modal-login .modal-link");
 
 loginBtn.addEventListener("click", () => {
-  getModal(
-    registerModalWindow,
-    backDrop,
-    "is-visible",
-    "is-hidden",
-    "is-hidden",
-    "is-visible",
-    0
-  );
+  showLoginWindow();
 });
 
 registerBtn.addEventListener("click", () => {
-  getModal(
-    registerModalWindow,
-    backDrop,
-    "is-visible",
-    "is-hidden",
-    "is-hidden",
-    "is-visible",
-    500
-  );
+  showRegisterWindow();
 });
 
-closeBtn.addEventListener("click", () => {
-  getModal(
-    registerModalWindow,
-    backDrop,
-    "is-visible",
-    "is-hidden",
-    "is-hidden",
-    "is-visible",
-    500
-  );
-});
+const showLoginWindow = () => {
+  backDropLogin.classList.add("is-visible");
+  backDropLogin.classList.remove("is-hidden");
+};
 
-window.addEventListener("mouseup", function (event) {
-  if (event.target == backDrop) {
-    getModal(
-      registerModalWindow,
-      backDrop,
-      "is-visible",
-      "is-hidden",
-      "is-hidden",
-      "is-visible",
-      500
-    );
+const showRegisterWindow = () => {
+  backDropRegister.classList.add("is-visible");
+  backDropRegister.classList.remove("is-hidden");
+};
+
+const hideElement = (e) => {
+  if (e.currentTarget === e.target) {
+    e.currentTarget.classList.add("is-hidden");
+    e.currentTarget.classList.remove("is-visible");
   }
-});
+};
+
+backDropRegister.addEventListener("click", hideElement);
+backDropLogin.addEventListener("click", hideElement);
