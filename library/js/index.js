@@ -198,6 +198,24 @@ registerBtn.addEventListener("click", () => {
   showRegisterWindow();
 });
 
+const hideRegisterWindow = () => {
+  backDropRegister.classList.add("is-hidden");
+  backDropRegister.classList.remove("is-visible");
+};
+
+const hideLoginWindow = () => {
+  backDropLogin.classList.add("is-hidden");
+  backDropLogin.classList.remove("is-visible");
+};
+
+registerCloseBtn.addEventListener("click", () => {
+  hideRegisterWindow();
+});
+
+loginCloseBtn.addEventListener("click", () => {
+  hideLoginWindow();
+});
+
 const showLoginWindow = () => {
   backDropLogin.classList.add("is-visible");
   backDropLogin.classList.remove("is-hidden");
@@ -217,3 +235,13 @@ const hideElement = (e) => {
 
 backDropRegister.addEventListener("click", hideElement);
 backDropLogin.addEventListener("click", hideElement);
+
+loginFromRegisterBtn.addEventListener("click", () => {
+  hideRegisterWindow();
+  showLoginWindow();
+});
+
+registerFromLoginBtn.addEventListener("click", () => {
+  hideLoginWindow();
+  showRegisterWindow();
+});
