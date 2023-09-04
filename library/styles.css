@@ -484,6 +484,34 @@ body {
   border-color: #bb945f;
 }
 
+.sign-up-card-section-btn,
+.log-in-card-section-btn {
+  width: 75px;
+  height: 30px;
+  background: #fff;
+  border-radius: 2px;
+  border: 1px solid #0c0c0e;
+  color: #0c0c0e;
+  text-align: center;
+  font-family: Inter-Bold, serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  cursor: pointer;
+  transition: background-color 0.6s ease, border-color 0.6s ease;
+}
+
+.sign-up-card-section-btn:hover,
+.log-in-card-section-btn:hover {
+  background-color: #bb945f;
+  border-color: #bb945f;
+}
+
 .book {
   width: 200px;
   height: 300px;

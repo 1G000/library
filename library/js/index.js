@@ -1,8 +1,8 @@
 // Проверить текущего пользователя
-// const localStorageProfile = localStorage.getItem("profile");
-// if (localStorageProfile) {
-//   window.profile = JSON.parse(localStorageProfile);
-// }
+const localStorageProfile = localStorage.getItem("profile");
+if (localStorageProfile) {
+  window.profile = JSON.parse(localStorageProfile);
+}
 
 // Бургер-меню
 
@@ -20,7 +20,7 @@ links.forEach((link) =>
   link.addEventListener("click", () => {
     burgerBtn.classList.remove("active");
     burgerMenu.classList.remove("burger-menu-open");
-  })
+  }),
 );
 
 window.addEventListener("mouseup", function (event) {
@@ -179,6 +179,8 @@ const registerBtn = document.querySelector("#register");
 const loginBtn = document.querySelector("#login");
 const logoutBtn = document.querySelector("#logout");
 const myProfileBtn = document.querySelector("#my-profile");
+const signUpBtn = document.querySelector(".sign-up-card-section-btn");
+const logInBtn = document.querySelector(".log-in-card-section-btn");
 const backDropRegister = document.querySelector(".backdrop.register");
 const backDropLogin = document.querySelector(".backdrop.login");
 const backDropProfile = document.querySelector(".backdrop.profile");
@@ -186,16 +188,24 @@ const registerCloseBtn = document.querySelector(".modal-register .close-btn");
 const loginCloseBtn = document.querySelector(".modal-login .close-btn");
 const profileCloseBtn = document.querySelector(".profile-modal-close-btn");
 const loginFromRegisterBtn = document.querySelector(
-  ".modal-register .modal-link"
+  ".modal-register .modal-link",
 );
 const registerFromLoginBtn = document.querySelector(".modal-login .modal-link");
 
 loginBtn.addEventListener("click", () => {
-  showLoginWindow();
+  localStorage.length ? showLoginWindow() : showRegisterWindow();
 });
 
 registerBtn.addEventListener("click", () => {
   showRegisterWindow();
+});
+
+signUpBtn.addEventListener("click", () => {
+  showRegisterWindow();
+});
+
+logInBtn.addEventListener("click", () => {
+  localStorage.length ? showLoginWindow() : showRegisterWindow();
 });
 
 const hideRegisterWindow = () => {
@@ -245,3 +255,95 @@ registerFromLoginBtn.addEventListener("click", () => {
   hideLoginWindow();
   showRegisterWindow();
 });
+
+//Регистрация
+const registerForm = document.querySelector(".modal-register .modal-form");
+registerForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const elements = e.currentTarget.elements;
+  const profile = {
+    email: elements.email.value,
+    name: elements.name.value,
+    lastname: elements.lastname.value,
+    password: elements.password.value,
+    cardNumber: generateCardNumber(),
+  };
+  const profiles = JSON.parse(localStorage.getItem("profiles") || "[]");
+  profiles.push(profile);
+  localStorage.setItem("profiles", JSON.stringify(profiles));
+  window.profile = profile;
+  localStorage.setItem("profile", JSON.stringify(profile));
+  updateUIForLoginProfile();
+  hideRegisterWindow();
+});
+
+//Вход
+const loginForm = document.querySelector(".modal-login .modal-form");
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const elements = e.currentTarget.elements;
+  const email = elements.email.value;
+  const password = elements.password.value;
+  elements.email.classList.remove("invalid");
+  elements.password.classList.remove("invalid");
+
+  const profiles = JSON.parse(localStorage.getItem("profiles") || "[]");
+  window.profile = profiles.find(
+    (p) =>
+      (p.cardNumber === email || p.email === email) && p.password === password,
+  );
+
+  if (window.profile) {
+    localStorage.setItem("profile", JSON.stringify(window.profile));
+    const visits = JSON.parse(localStorage.getItem("visits") || "{}");
+    visits[window.profile.email] = (visits[window.profile.email] || 0) + 1;
+    localStorage.setItem("visits", JSON.stringify(visits));
+    updateUIForLoginProfile();
+    hideLoginWindow();
+  } else {
+    elements.email.classList.add("invalid");
+    elements.password.classList.add("invalid");
+  }
+});
+
+logoutBtn.addEventListener("click", () => {
+  window.profile = undefined;
+  localStorage.removeItem("profile");
+  updateUIForLoginProfile();
+});
+
+const getFirstUpperLetter = (val) => val.charAt(0).toUpperCase();
+
+const updateUIForLoginProfile = () => {
+  const profileMenu = document.querySelector(".drop-menu-title");
+  if (window.profile) {
+    registerBtn.style = "display: none;";
+    loginBtn.style = "display: none;";
+    myProfileBtn.style = "";
+    logoutBtn.style = "";
+    profileBtn.classList.add("auth");
+    const profileName = profileBtn.querySelector("span");
+    profileName.innerHTML = `${getFirstUpperLetter(
+      window.profile.name,
+    )}${getFirstUpperLetter(window.profile.lastname)}`;
+    profileMenu.innerHTML = window.profile.cardNumber;
+  } else {
+    registerBtn.style = "";
+    loginBtn.style = "";
+    myProfileBtn.style = "display: none;";
+    logoutBtn.style = "display: none;";
+    profileBtn.classList.remove("auth");
+    profileMenu.innerHTML = "Profile";
+  }
+};
+
+updateUIForLoginProfile();
+
+//Генерация рандомного номера карты
+const generateCardNumber = () => {
+  let result = "";
+  for (let i = 0; i < 9; i++) {
+    result += (Math.ceil(Math.random() * 100) % 16).toString(16).toUpperCase();
+  }
+  return result;
+};
