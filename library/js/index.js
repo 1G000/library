@@ -191,6 +191,8 @@ const loginFromRegisterBtn = document.querySelector(
   ".modal-register .modal-link",
 );
 const registerFromLoginBtn = document.querySelector(".modal-login .modal-link");
+const cardsColumnsInfo = document.querySelector(".cards-columns");
+const cardsColumnsAuthInfo = document.querySelector(".cards-columns-auth");
 
 loginBtn.addEventListener("click", () => {
   localStorage.length ? showLoginWindow() : showRegisterWindow();
@@ -298,6 +300,8 @@ loginForm.addEventListener("submit", (e) => {
     const visits = JSON.parse(localStorage.getItem("visits") || "{}");
     visits[window.profile.email] = (visits[window.profile.email] || 0) + 1;
     localStorage.setItem("visits", JSON.stringify(visits));
+    cardsColumnsInfo.classList.add("hidden");
+    cardsColumnsAuthInfo.classList.remove("hidden");
     updateUIForLoginProfile();
     hideLoginWindow();
   } else {
@@ -322,11 +326,17 @@ const updateUIForLoginProfile = () => {
     myProfileBtn.style = "";
     logoutBtn.style = "";
     profileBtn.classList.add("auth");
+    profileBtn.setAttribute(
+      "title",
+      `${window.profile.name} ${window.profile.lastname}`,
+    );
     const profileName = profileBtn.querySelector("span");
     profileName.innerHTML = `${getFirstUpperLetter(
       window.profile.name,
     )}${getFirstUpperLetter(window.profile.lastname)}`;
     profileMenu.innerHTML = window.profile.cardNumber;
+    cardsColumnsInfo.classList.add("hidden");
+    cardsColumnsAuthInfo.classList.remove("hidden");
   } else {
     registerBtn.style = "";
     loginBtn.style = "";
@@ -334,6 +344,9 @@ const updateUIForLoginProfile = () => {
     logoutBtn.style = "display: none;";
     profileBtn.classList.remove("auth");
     profileMenu.innerHTML = "Profile";
+    cardsColumnsInfo.classList.remove("hidden");
+    cardsColumnsAuthInfo.classList.add("hidden");
+    profileBtn.setAttribute("title", "");
   }
 };
 

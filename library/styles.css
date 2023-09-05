@@ -551,7 +551,7 @@ body {
 }
 
 .menu-left {
-  width: 441px;
+  width: 443px;
 }
 .menu-right {
   width: 482px;
@@ -701,11 +701,60 @@ body {
   align-items: center;
 }
 
+.cards-colums-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .cards-columns {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s step-start;
+}
+
+.cards-columns.hidden {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s step-end;
+}
+
+.cards-columns-auth {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s step-start;
+}
+
+.cards-columns-auth.hidden {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s step-end;
 }
 
 .buy-a-card-modal {
