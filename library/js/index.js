@@ -193,6 +193,9 @@ const loginFromRegisterBtn = document.querySelector(
 const registerFromLoginBtn = document.querySelector(".modal-login .modal-link");
 const cardsColumnsInfo = document.querySelector(".cards-columns");
 const cardsColumnsAuthInfo = document.querySelector(".cards-columns-auth");
+const checkCardBtns = document.querySelectorAll(".check-card-btn");
+const holderStats = document.querySelectorAll(".holder-stats");
+const dropMenuTitle = document.querySelector(".drop-menu-title");
 
 loginBtn.addEventListener("click", () => {
   localStorage.length ? showLoginWindow() : showRegisterWindow();
@@ -238,6 +241,24 @@ const showRegisterWindow = () => {
   backDropRegister.classList.remove("is-hidden");
 };
 
+const showProfileWindow = () => {
+  backDropProfile.classList.add("is-visible");
+  backDropProfile.classList.remove("is-hidden");
+};
+
+const hideProfileWindow = () => {
+  backDropProfile.classList.add("is-hidden");
+  backDropProfile.classList.remove("is-visible");
+};
+
+myProfileBtn.addEventListener("click", () => {
+  showProfileWindow();
+});
+
+profileCloseBtn.addEventListener("click", () => {
+  hideProfileWindow();
+});
+
 const hideElement = (e) => {
   if (e.currentTarget === e.target) {
     e.currentTarget.classList.add("is-hidden");
@@ -247,6 +268,7 @@ const hideElement = (e) => {
 
 backDropRegister.addEventListener("click", hideElement);
 backDropLogin.addEventListener("click", hideElement);
+backDropProfile.addEventListener("click", hideElement);
 
 loginFromRegisterBtn.addEventListener("click", () => {
   hideRegisterWindow();
@@ -335,6 +357,7 @@ const updateUIForLoginProfile = () => {
       window.profile.name,
     )}${getFirstUpperLetter(window.profile.lastname)}`;
     profileMenu.innerHTML = window.profile.cardNumber;
+    dropMenuTitle.style.fontSize = "11" + "px";
     cardsColumnsInfo.classList.add("hidden");
     cardsColumnsAuthInfo.classList.remove("hidden");
   } else {
@@ -347,6 +370,7 @@ const updateUIForLoginProfile = () => {
     cardsColumnsInfo.classList.remove("hidden");
     cardsColumnsAuthInfo.classList.add("hidden");
     profileBtn.setAttribute("title", "");
+    dropMenuTitle.style.fontSize = "15" + "px";
   }
 };
 
@@ -360,3 +384,22 @@ const generateCardNumber = () => {
   }
   return result;
 };
+
+//Секция Digital library card
+
+const showHideButton = () => {
+  checkCardBtns.forEach((button) => button.classList.remove("hidden"));
+};
+const hideHoldersStats = () => {
+  holderStats.forEach((holderStat) => holderStat.classList.add("hidden"));
+};
+const hideNshowHolderStats = () => {
+  checkCardBtns.forEach((button) => button.classList.add("hidden"));
+  holderStats.forEach((holderStat) => holderStat.classList.remove("hidden"));
+  setTimeout(showHideButton, 3000);
+  setTimeout(hideHoldersStats, 3000);
+};
+
+checkCardBtns.forEach((button) =>
+  button.addEventListener("click", () => hideNshowHolderStats()),
+);
