@@ -83,6 +83,81 @@
         </div>
       </header>
       <main class="main">
+        <div class="backdrop is-hidden buy-a-card">
+          <div class="modal buy-a-card-modal">
+            <header class="buy-a-card-modal-header">
+              <h2 class="buy-a-card-modal-title">Buy a library card</h2>
+              <img
+                class="buy-a-card-modal-close-btn"
+                src="./img/util/close_btn_black.svg"
+              />
+            </header>
+            <div class="buy-a-card-modal-main">
+              <div class="buy-a-card-modal-left-side">
+                <form class="modal-form">
+                  <label for="cardnumber" class="modal-text"
+                    >Bank card number</label
+                  >
+                  <input
+                    class="modal-input"
+                    type="text"
+                    name="cardnumber"
+                    required
+                  />
+                  <label for="code" class="modal-text">Expiration code</label>
+                  <div class="expiration-code-input-area">
+                    <input
+                      class="modal-input-mini"
+                      type="text"
+                      name="code"
+                      required
+                    />
+                    <input
+                      class="modal-input-mini"
+                      type="text"
+                      name="code"
+                      required
+                    />
+                  </div>
+                  <label for="cvc" class="modal-text">CVC</label>
+                  <input
+                    class="modal-input-cvc"
+                    type="email"
+                    name="cvc"
+                    required
+                  />
+                  <label for="cardholdername" class="modal-text"
+                    >Cardholder name</label
+                  >
+                  <input
+                    class="modal-input"
+                    type="password"
+                    name="cardholdername"
+                    required
+                  />
+                  <label for="postalcode" class="modal-text">Postal code</label>
+                  <input class="modal-input" name="postalcode" required />
+                  <label for="city" class="modal-text">City / Town</label>
+                  <input class="modal-input" name="city" required />
+                  <div class="btn-price-container">
+                    <button class="buy-a-card-modal-btn" type="submit">
+                      Buy
+                    </button>
+                    <span class="buy-a-card-modal-price">$ 25.00</span>
+                  </div>
+                </form>
+              </div>
+              <div class="buy-a-card-modal-right-side">
+                <p class="buy-a-card-modal-textcontent">
+                  If you are live, work, attend school, or pay property taxes in
+                  New York State, you can get a $25 digital library card right
+                  now using this online form. Visitors to New York State can
+                  also use this form to apply for a temporary card.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="backdrop register is-hidden">
           <div class="modal modal-register">
             <h3 class="modal-title">REGISTER</h3>
@@ -136,10 +211,14 @@
           </div>
         </div>
         <div class="backdrop profile is-hidden">
-          <div class="profile-modal">
+          <div class="profile-modal modal">
             <div class="profile-modal-left-side">
-              <img class="profile-modal-ico" src="#" />
-              <span class="profile-modal-username">John Doe</span>
+              <div class="profile-modal-ico">
+                <span class="profile-modal-ico-text"></span>
+              </div>
+              <div class="profile-modal-username">
+                <span class="profile-modal-username-text">John Doe</span>
+              </div>
             </div>
             <div class="profile-modal-right-side">
               <h2 class="profile-modal-title">My profile</h2>
@@ -167,7 +246,7 @@
                   /><span class="holder-stats-text-content">500</span>
                 </div>
               </div>
-              <div>
+              <div class="rented-books-area">
                 <p class="rented-books-list-title">Rented books</p>
                 <ul class="rented-books-list">
                   <li class="rented-book">First book</li>
@@ -175,7 +254,7 @@
                 </ul>
                 <div class="holder-modal-card-number-area">
                   <p class="card-number-textcontent">Card number</p>
-                  <span class="card-number">F00234030</span>
+                  <span class="card-number"></span>
                   <span><img src="./img/util/icon copy.svg" /></span>
                 </div>
               </div>
@@ -424,9 +503,7 @@
                   is an opportunity for her family to eventually immigrate. For
                   fans of Isabel Allende and Julia Alvarez.
                 </p>
-                <button disabled type="button" class="buy-btn buy-btn-active">
-                  Own
-                </button>
+                <button type="button" class="buy-btn">Buy</button>
                 <img
                   src="./img/books-covers/cruz.jpg"
                   class="book"
@@ -507,9 +584,7 @@
                   her four granddaughters together in an erotic tale of villains
                   and dreamers, queens and revolutionaries, lepers and healers.
                 </p>
-                <button disabled type="button" class="buy-btn buy-btn-active">
-                  Own
-                </button>
+                <button type="button" class="buy-btn">Buy</button>
                 <img
                   src="./img/books-covers/kiana.jpg"
                   class="book"
@@ -588,9 +663,7 @@
                   hairballs of codependency. A father and child experience the
                   shared trauma of giving birth to gods from their wounds.
                 </p>
-                <button disabled type="button" class="buy-btn buy-btn-active">
-                  Own
-                </button>
+                <button type="button" class="buy-btn">Buy</button>
                 <img
                   src="./img/books-covers/slug.jpg"
                   class="book"
@@ -831,7 +904,7 @@
                   databases, educational resources, and more.
                 </p>
                 <div class="card-btn-area-auth">
-                  <button class="buy-btn card-btn">Profile</button>
+                  <button class="card-section-profile-btn">Profile</button>
                 </div>
               </div>
             </div>
@@ -881,73 +954,6 @@
           >
         </div>
       </footer>
-
-      <div class="buy-a-card-modal">
-        <header class="buy-a-card-modal-header">
-          <h2 class="buy-a-card-modal-title">Buy a library card</h2>
-          <img
-            class="buy-a-card-modal-close-btn"
-            src="./img/util/close_btn_black.svg"
-          />
-        </header>
-        <div class="buy-a-card-modal-main">
-          <div class="buy-a-card-modal-left-side">
-            <form class="modal-form">
-              <label for="cardnumber" class="modal-text"
-                >Bank card number</label
-              >
-              <input
-                class="modal-input"
-                type="text"
-                name="cardnumber"
-                required
-              />
-              <label for="code" class="modal-text">Expiration code</label>
-              <div class="expiration-code-input-area">
-                <input
-                  class="modal-input-mini"
-                  type="text"
-                  name="code"
-                  required
-                />
-                <input
-                  class="modal-input-mini"
-                  type="text"
-                  name="code"
-                  required
-                />
-              </div>
-              <label for="cvc" class="modal-text">CVC</label>
-              <input class="modal-input-cvc" type="email" name="cvc" required />
-              <label for="cardholdername" class="modal-text"
-                >Cardholder name</label
-              >
-              <input
-                class="modal-input"
-                type="password"
-                name="cardholdername"
-                required
-              />
-              <label for="postalcode" class="modal-text">Postal code</label>
-              <input class="modal-input" name="postalcode" required />
-              <label for="city" class="modal-text">City / Town</label>
-              <input class="modal-input" name="city" required />
-              <div class="btn-price-container">
-                <button class="buy-a-card-modal-btn" type="submit">Buy</button>
-                <span class="buy-a-card-modal-price">$ 25.00</span>
-              </div>
-            </form>
-          </div>
-          <div class="buy-a-card-modal-right-side">
-            <p class="buy-a-card-modal-textcontent">
-              If you are live, work, attend school, or pay property taxes in New
-              York State, you can get a $25 digital library card right now using
-              this online form. Visitors to New York State can also use this
-              form to apply for a temporary card.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </body>
 </html>

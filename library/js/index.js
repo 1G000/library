@@ -184,6 +184,7 @@ const logInBtn = document.querySelector(".log-in-card-section-btn");
 const backDropRegister = document.querySelector(".backdrop.register");
 const backDropLogin = document.querySelector(".backdrop.login");
 const backDropProfile = document.querySelector(".backdrop.profile");
+const backDropBuyCard = document.querySelector(".backdrop.buy-a-card");
 const registerCloseBtn = document.querySelector(".modal-register .close-btn");
 const loginCloseBtn = document.querySelector(".modal-login .close-btn");
 const profileCloseBtn = document.querySelector(".profile-modal-close-btn");
@@ -196,6 +197,14 @@ const cardsColumnsAuthInfo = document.querySelector(".cards-columns-auth");
 const checkCardBtns = document.querySelectorAll(".check-card-btn");
 const holderStats = document.querySelectorAll(".holder-stats");
 const dropMenuTitle = document.querySelector(".drop-menu-title");
+const cardNumber = document.querySelector(".card-number");
+const profileIcoLetters = document.querySelector(".profile-modal-ico-text");
+const profileNameText = document.querySelector(".profile-modal-username-text");
+const profileBtnCardSection = document.querySelector(
+  ".card-section-profile-btn",
+);
+const buyBtns = document.querySelectorAll(".buy-btn");
+const buyCardCloseBtn = document.querySelector(".buy-a-card-modal-close-btn");
 
 loginBtn.addEventListener("click", () => {
   localStorage.length ? showLoginWindow() : showRegisterWindow();
@@ -259,6 +268,28 @@ profileCloseBtn.addEventListener("click", () => {
   hideProfileWindow();
 });
 
+profileBtnCardSection.addEventListener("click", () => {
+  showProfileWindow();
+});
+
+buyBtns.forEach((btn) =>
+  btn.addEventListener("click", () => showBuyCardWindow()),
+);
+
+buyCardCloseBtn.addEventListener("click", () => {
+  hideBuyCardWindow();
+});
+
+const showBuyCardWindow = () => {
+  backDropBuyCard.classList.add("is-visible");
+  backDropBuyCard.classList.remove("is-hidden");
+};
+
+const hideBuyCardWindow = () => {
+  backDropBuyCard.classList.remove("is-visible");
+  backDropBuyCard.classList.add("is-hidden");
+};
+
 const hideElement = (e) => {
   if (e.currentTarget === e.target) {
     e.currentTarget.classList.add("is-hidden");
@@ -269,6 +300,7 @@ const hideElement = (e) => {
 backDropRegister.addEventListener("click", hideElement);
 backDropLogin.addEventListener("click", hideElement);
 backDropProfile.addEventListener("click", hideElement);
+backDropBuyCard.addEventListener("click", hideElement);
 
 loginFromRegisterBtn.addEventListener("click", () => {
   hideRegisterWindow();
@@ -360,6 +392,11 @@ const updateUIForLoginProfile = () => {
     dropMenuTitle.style.fontSize = "11" + "px";
     cardsColumnsInfo.classList.add("hidden");
     cardsColumnsAuthInfo.classList.remove("hidden");
+    cardNumber.textContent = `${window.profile.cardNumber}`;
+    profileIcoLetters.innerHTML = `${getFirstUpperLetter(
+      window.profile.name,
+    )}${getFirstUpperLetter(window.profile.lastname)}`;
+    profileNameText.innerHTML = `${window.profile.name} ${window.profile.lastname}`;
   } else {
     registerBtn.style = "";
     loginBtn.style = "";
