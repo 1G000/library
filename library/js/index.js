@@ -207,88 +207,68 @@ const buyBtns = document.querySelectorAll(".buy-btn");
 const buyCardCloseBtn = document.querySelector(".buy-a-card-modal-close-btn");
 
 loginBtn.addEventListener("click", () => {
-  localStorage.length ? showLoginWindow() : showRegisterWindow();
-});
-
-registerBtn.addEventListener("click", () => {
-  showRegisterWindow();
-});
-
-signUpBtn.addEventListener("click", () => {
-  showRegisterWindow();
+  localStorage.length ? openModal(backDropLogin) : openModal(backDropRegister);
 });
 
 logInBtn.addEventListener("click", () => {
-  localStorage.length ? showLoginWindow() : showRegisterWindow();
+  localStorage.length ? openModal(backDropLogin) : openModal(backDropRegister);
 });
 
-const hideRegisterWindow = () => {
-  backDropRegister.classList.add("is-hidden");
-  backDropRegister.classList.remove("is-visible");
-};
+function openModal(element) {
+  element.classList.add("is-visible");
+  element.classList.remove("is-hidden");
+}
 
-const hideLoginWindow = () => {
-  backDropLogin.classList.add("is-hidden");
-  backDropLogin.classList.remove("is-visible");
-};
+function hideModal(element) {
+  element.classList.add("is-hidden");
+  element.classList.remove("is-visible");
+}
+
+registerBtn.addEventListener("click", () => {
+  openModal(backDropRegister);
+});
+
+signUpBtn.addEventListener("click", () => {
+  openModal(backDropRegister);
+});
 
 registerCloseBtn.addEventListener("click", () => {
-  hideRegisterWindow();
+  hideModal(backDropRegister);
 });
 
 loginCloseBtn.addEventListener("click", () => {
-  hideLoginWindow();
+  hideModal(backDropLogin);
 });
 
-const showLoginWindow = () => {
-  backDropLogin.classList.add("is-visible");
-  backDropLogin.classList.remove("is-hidden");
-};
-
-const showRegisterWindow = () => {
-  backDropRegister.classList.add("is-visible");
-  backDropRegister.classList.remove("is-hidden");
-};
-
-const showProfileWindow = () => {
-  backDropProfile.classList.add("is-visible");
-  backDropProfile.classList.remove("is-hidden");
-};
-
-const hideProfileWindow = () => {
-  backDropProfile.classList.add("is-hidden");
-  backDropProfile.classList.remove("is-visible");
-};
-
 myProfileBtn.addEventListener("click", () => {
-  showProfileWindow();
+  openModal(backDropProfile);
 });
 
 profileCloseBtn.addEventListener("click", () => {
-  hideProfileWindow();
+  hideModal(backDropProfile);
 });
 
 profileBtnCardSection.addEventListener("click", () => {
-  showProfileWindow();
+  openModal(backDropProfile);
 });
 
 buyBtns.forEach((btn) =>
-  btn.addEventListener("click", () => showBuyCardWindow()),
+  btn.addEventListener("click", () => openModal(backDropBuyCard)),
 );
 
 buyCardCloseBtn.addEventListener("click", () => {
-  hideBuyCardWindow();
+  hideModal(backDropBuyCard);
 });
 
-const showBuyCardWindow = () => {
-  backDropBuyCard.classList.add("is-visible");
-  backDropBuyCard.classList.remove("is-hidden");
-};
+loginFromRegisterBtn.addEventListener("click", () => {
+  hideModal(backDropRegister);
+  openModal(backDropLogin);
+});
 
-const hideBuyCardWindow = () => {
-  backDropBuyCard.classList.remove("is-visible");
-  backDropBuyCard.classList.add("is-hidden");
-};
+registerFromLoginBtn.addEventListener("click", () => {
+  hideModal(backDropLogin);
+  openModal(backDropRegister);
+});
 
 const hideElement = (e) => {
   if (e.currentTarget === e.target) {
@@ -301,16 +281,6 @@ backDropRegister.addEventListener("click", hideElement);
 backDropLogin.addEventListener("click", hideElement);
 backDropProfile.addEventListener("click", hideElement);
 backDropBuyCard.addEventListener("click", hideElement);
-
-loginFromRegisterBtn.addEventListener("click", () => {
-  hideRegisterWindow();
-  showLoginWindow();
-});
-
-registerFromLoginBtn.addEventListener("click", () => {
-  hideLoginWindow();
-  showRegisterWindow();
-});
 
 //Регистрация
 const registerForm = document.querySelector(".modal-register .modal-form");
@@ -330,7 +300,7 @@ registerForm.addEventListener("submit", (e) => {
   window.profile = profile;
   localStorage.setItem("profile", JSON.stringify(profile));
   updateUIForLoginProfile();
-  hideRegisterWindow();
+  hideModal(backDropRegister);
 });
 
 //Вход
@@ -357,7 +327,7 @@ loginForm.addEventListener("submit", (e) => {
     cardsColumnsInfo.classList.add("hidden");
     cardsColumnsAuthInfo.classList.remove("hidden");
     updateUIForLoginProfile();
-    hideLoginWindow();
+    hideModal(backDropLogin);
   } else {
     elements.email.classList.add("invalid");
     elements.password.classList.add("invalid");
