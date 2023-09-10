@@ -98,31 +98,16 @@
                   <label for="cardnumber" class="modal-text"
                     >Bank card number</label
                   >
-                  <input
-                    class="modal-input"
-                    type="text"
-                    name="cardnumber"
-                    required
-                  />
+                  <input class="modal-input" type="text" required />
                   <label for="code" class="modal-text">Expiration code</label>
                   <div class="expiration-code-input-area">
-                    <input
-                      class="modal-input-mini"
-                      type="text"
-                      name="code"
-                      required
-                    />
-                    <input
-                      class="modal-input-mini"
-                      type="text"
-                      name="code"
-                      required
-                    />
+                    <input class="modal-input-mini" type="number" required />
+                    <input class="modal-input-mini" type="number" required />
                   </div>
                   <label for="cvc" class="modal-text">CVC</label>
                   <input
                     class="modal-input-cvc"
-                    type="email"
+                    type="number"
                     name="cvc"
                     required
                   />
@@ -249,13 +234,15 @@
               <div class="rented-books-area">
                 <p class="rented-books-list-title">Rented books</p>
                 <ul class="rented-books-list">
-                  <li class="rented-book">First book</li>
-                  <li class="rented-book">Second book</li>
+                  <li class="rented-book">The Last Queen, Clive Irving</li>
+                  <li class="rented-book">Dominicana, Angie Cruz</li>
                 </ul>
                 <div class="holder-modal-card-number-area">
                   <p class="card-number-textcontent">Card number</p>
-                  <span class="card-number"></span>
-                  <span><img src="./img/util/icon copy.svg" /></span>
+                  <p class="card-number"></p>
+                  <span class="copy-card-number-ico"
+                    ><img src="./img/util/icon copy.svg"
+                  /></span>
                 </div>
               </div>
             </div>
@@ -781,7 +768,7 @@
                 <div class="card-field">
                   <div class="card">
                     <h5 class="card-title">Brooklyn Public Library</h5>
-                    <form class="holder-form">
+                    <form class="holder-form" id="profile-card-form">
                       <input
                         class="holder-info"
                         type="text"
@@ -798,10 +785,14 @@
                   </div>
                   <div class="check-card-btn-wrapper">
                     <div>
-                      <button type="submit" class="check-card-btn">
+                      <button
+                        type="submit"
+                        class="check-card-btn"
+                        form="profile-card-form"
+                      >
                         Check the card
                       </button>
-                      <div class="holder-stats hidden">
+                      <div class="holder-stats-not-auth hidden">
                         <div class="holder-stats-row">
                           <span class="holder-stats-text-content">Visits</span
                           ><img
@@ -844,7 +835,6 @@
                 </div>
               </div>
             </div>
-
             <div class="cards-columns-auth hidden">
               <div class="find-card-column">
                 <p class="find-card-title">Your Library card</p>
@@ -854,23 +844,20 @@
                     <form class="holder-form">
                       <input
                         class="holder-info"
+                        id="holder-info-name"
                         type="text"
                         placeholder="Reader's name "
                       />
                       <input
                         class="holder-info"
+                        id="holder-info-number"
                         type="text"
                         placeholder="Card number"
                       />
                     </form>
                   </div>
                   <div class="check-card-btn-wrapper">
-                    <div>
-                      <button type="submit" class="check-card-btn">
-                        Check the card
-                      </button>
-                    </div>
-                    <div class="holder-stats hidden">
+                    <div class="holder-stats">
                       <div class="holder-stats-row">
                         <span class="holder-stats-text-content">Visits</span
                         ><img

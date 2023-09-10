@@ -470,7 +470,6 @@ body {
   left: 20px;
   bottom: 15px;
   cursor: pointer;
-  transition: background-color 0.6s ease, border-color 0.6s ease;
 }
 
 .buy-btn-active {
@@ -508,7 +507,9 @@ body {
 }
 
 .sign-up-card-section-btn:hover,
-.log-in-card-section-btn:hover {
+.log-in-card-section-btn:hover,
+.sign-up-btn:hover,
+.buy-a-card-modal-btn:hover {
   background-color: #bb945f;
   border-color: #bb945f;
 }
@@ -756,6 +757,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease-in-out, visibility 0.5s step-end;
+  pointer-events: none;
 }
 
 .buy-a-card-modal-header {
@@ -782,6 +784,7 @@ body {
 .buy-a-card-modal-close-btn {
   position: absolute;
   left: 608px;
+  cursor: pointer;
 }
 
 .buy-a-card-modal-main {
@@ -827,6 +830,8 @@ body {
   line-height: normal;
   letter-spacing: 1px;
   margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.6s ease, border-color 0.6s ease;
 }
 
 .buy-a-card-modal-price {
@@ -910,6 +915,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
 
 .rented-books-area {
@@ -1015,6 +1021,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 600px;
+  height: 386px;
   border: 3px solid #bb945f;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: #fff;
@@ -1060,6 +1068,10 @@ body {
   letter-spacing: 0.6px;
   padding-left: 20px;
   border: 0px;
+}
+
+.holder-info.after-login {
+  color: #bb945f;
 }
 
 .holder-form :first-child {
@@ -1357,10 +1369,27 @@ body {
   transition: opacity 0.3s ease-in-out, visibility 0.3s step-start;
 }
 
-.holder-stats.hidden {
+.holder-stats-not-auth {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 15px;
+  margin-bottom: -12px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s step-start;
+}
+
+.holder-stats-not-auth.hidden {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.1s ease-in-out, visibility 0.1s step-end;
+  pointer-events: none;
 }
 
 .holder-stats-row {
@@ -1572,13 +1601,6 @@ body {
     margin-left: 90px;
   }
 
-  .card-field {
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-  }
-
   .get-card-column {
     align-items: center;
   }
@@ -1635,11 +1657,10 @@ body {
 
 .drop-menu-line {
   width: 40px;
-  height: 1px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
-  background-color: #bb945f;
+  border: 1px solid #bb945f;
 }
 
 .drop-menu-items {
@@ -1712,7 +1733,7 @@ body {
 .buy-a-card-modal {
   display: none;
   flex-direction: column;
-  width: 650px;
+  width: 640px;
   z-index: 99;
   opacity: 1;
   position: relative;
@@ -1754,6 +1775,7 @@ body {
   height: 15px;
   width: 15px;
   border: none;
+  background-color: #fff;
   background-image: url(./img/util/close_btn.svg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -1822,6 +1844,8 @@ body {
   line-height: normal;
   letter-spacing: 1px;
   margin: 10px 0;
+  cursor: pointer;
+  transition: background-color 0.6s ease, border-color 0.6s ease;
 }
 .modal-bottom {
   align-self: start;
