@@ -757,6 +757,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease-in-out, visibility 0.5s step-end;
+  pointer-events: none;
 }
 
 .buy-a-card-modal-header {
@@ -1020,6 +1021,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 600px;
+  height: 386px;
   border: 3px solid #bb945f;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background: #fff;
@@ -1065,6 +1068,10 @@ body {
   letter-spacing: 0.6px;
   padding-left: 20px;
   border: 0px;
+}
+
+.holder-info.after-login {
+  color: #bb945f;
 }
 
 .holder-form :first-child {
@@ -1362,10 +1369,27 @@ body {
   transition: opacity 0.3s ease-in-out, visibility 0.3s step-start;
 }
 
-.holder-stats.hidden {
+.holder-stats-not-auth {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 15px;
+  margin-bottom: -12px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s step-start;
+}
+
+.holder-stats-not-auth.hidden {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.1s ease-in-out, visibility 0.1s step-end;
+  pointer-events: none;
 }
 
 .holder-stats-row {
@@ -1577,13 +1601,6 @@ body {
     margin-left: 90px;
   }
 
-  .card-field {
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-  }
-
   .get-card-column {
     align-items: center;
   }
@@ -1640,11 +1657,10 @@ body {
 
 .drop-menu-line {
   width: 40px;
-  height: 1px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 15px;
-  background-color: #bb945f;
+  border: 1px solid #bb945f;
 }
 
 .drop-menu-items {

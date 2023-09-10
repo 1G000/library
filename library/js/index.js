@@ -20,7 +20,7 @@ links.forEach((link) =>
   link.addEventListener("click", () => {
     burgerBtn.classList.remove("active");
     burgerMenu.classList.remove("burger-menu-open");
-  }),
+  })
 );
 
 window.addEventListener("mouseup", function (event) {
@@ -189,22 +189,24 @@ const registerCloseBtn = document.querySelector(".modal-register .close-btn");
 const loginCloseBtn = document.querySelector(".modal-login .close-btn");
 const profileCloseBtn = document.querySelector(".profile-modal-close-btn");
 const loginFromRegisterBtn = document.querySelector(
-  ".modal-register .modal-link",
+  ".modal-register .modal-link"
 );
 const registerFromLoginBtn = document.querySelector(".modal-login .modal-link");
 const cardsColumnsInfo = document.querySelector(".cards-columns");
 const cardsColumnsAuthInfo = document.querySelector(".cards-columns-auth");
-const checkCardBtns = document.querySelectorAll(".check-card-btn");
-const holderStats = document.querySelectorAll(".holder-stats");
+const checkCardBtn = document.querySelector(".check-card-btn");
+const holderStats = document.querySelector(".holder-stats-not-auth");
 const dropMenuTitle = document.querySelector(".drop-menu-title");
 const cardNumber = document.querySelector(".card-number");
 const profileIcoLetters = document.querySelector(".profile-modal-ico-text");
 const profileNameText = document.querySelector(".profile-modal-username-text");
 const profileBtnCardSection = document.querySelector(
-  ".card-section-profile-btn",
+  ".card-section-profile-btn"
 );
 const buyBtns = document.querySelectorAll(".buy-btn");
 const buyCardCloseBtn = document.querySelector(".buy-a-card-modal-close-btn");
+const cardHolderName = document.querySelector("#holder-info-name");
+const cardHolderNumber = document.querySelector("#holder-info-number");
 
 loginBtn.addEventListener("click", () => {
   localStorage.length ? openModal(backDropLogin) : openModal(backDropRegister);
@@ -253,7 +255,9 @@ profileBtnCardSection.addEventListener("click", () => {
 });
 
 buyBtns.forEach((btn) =>
-  btn.addEventListener("click", () => openModal(backDropBuyCard)),
+  btn.addEventListener("click", () =>
+    window.profile ? openModal(backDropBuyCard) : openModal(backDropLogin)
+  )
 );
 
 buyCardCloseBtn.addEventListener("click", () => {
@@ -316,14 +320,11 @@ loginForm.addEventListener("submit", (e) => {
   const profiles = JSON.parse(localStorage.getItem("profiles") || "[]");
   window.profile = profiles.find(
     (p) =>
-      (p.cardNumber === email || p.email === email) && p.password === password,
+      (p.cardNumber === email || p.email === email) && p.password === password
   );
 
   if (window.profile) {
     localStorage.setItem("profile", JSON.stringify(window.profile));
-    const visits = JSON.parse(localStorage.getItem("visits") || "{}");
-    visits[window.profile.email] = (visits[window.profile.email] || 0) + 1;
-    localStorage.setItem("visits", JSON.stringify(visits));
     cardsColumnsInfo.classList.add("hidden");
     cardsColumnsAuthInfo.classList.remove("hidden");
     updateUIForLoginProfile();
@@ -352,11 +353,11 @@ const updateUIForLoginProfile = () => {
     profileBtn.classList.add("auth");
     profileBtn.setAttribute(
       "title",
-      `${window.profile.name} ${window.profile.lastname}`,
+      `${window.profile.name} ${window.profile.lastname}`
     );
     const profileName = profileBtn.querySelector("span");
     profileName.innerHTML = `${getFirstUpperLetter(
-      window.profile.name,
+      window.profile.name
     )}${getFirstUpperLetter(window.profile.lastname)}`;
     profileMenu.innerHTML = window.profile.cardNumber;
     dropMenuTitle.style.fontSize = "11" + "px";
@@ -364,9 +365,13 @@ const updateUIForLoginProfile = () => {
     cardsColumnsAuthInfo.classList.remove("hidden");
     cardNumber.textContent = `${window.profile.cardNumber}`;
     profileIcoLetters.innerHTML = `${getFirstUpperLetter(
-      window.profile.name,
+      window.profile.name
     )}${getFirstUpperLetter(window.profile.lastname)}`;
     profileNameText.innerHTML = `${window.profile.name} ${window.profile.lastname}`;
+    cardHolderName.classList.add("after-login");
+    cardHolderNumber.classList.add("after-login");
+    cardHolderName.value = `${window.profile.name} ${window.profile.lastname}`;
+    cardHolderNumber.value = `${window.profile.cardNumber}`;
   } else {
     registerBtn.style = "";
     loginBtn.style = "";
@@ -393,20 +398,36 @@ const generateCardNumber = () => {
 };
 
 //Секция Digital library card
+const checkCardForm = document.querySelector("#profile-card-form");
 
 const showHideButton = () => {
-  checkCardBtns.forEach((button) => button.classList.remove("hidden"));
+  checkCardBtn.classList.remove("hidden");
+  const elements = checkCardForm;
+  elements.name.value = "";
+  elements.cardNumber.value = "";
 };
 const hideHoldersStats = () => {
-  holderStats.forEach((holderStat) => holderStat.classList.add("hidden"));
+  holderStats.classList.add("hidden");
 };
 const hideNshowHolderStats = () => {
-  checkCardBtns.forEach((button) => button.classList.add("hidden"));
-  holderStats.forEach((holderStat) => holderStat.classList.remove("hidden"));
-  setTimeout(showHideButton, 3000);
-  setTimeout(hideHoldersStats, 3000);
+  checkCardBtn.classList.add("hidden");
+  holderStats.classList.remove("hidden");
+  setTimeout(showHideButton, 10000);
+  setTimeout(hideHoldersStats, 10000);
 };
 
-checkCardBtns.forEach((button) =>
-  button.addEventListener("click", () => hideNshowHolderStats()),
-);
+//проверка карты
+
+checkCardForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const elements = e.currentTarget.elements;
+  const name = elements.name.value;
+  const cardNumber = elements.cardNumber.value;
+  const profiles = JSON.parse(localStorage.getItem("profiles") || "[]");
+  const profile = profiles.find(
+    (p) => p.name === name && p.cardNumber === cardNumber
+  );
+  if (profile) {
+    hideNshowHolderStats();
+  }
+});
